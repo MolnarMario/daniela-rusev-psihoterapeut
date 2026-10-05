@@ -114,7 +114,7 @@ p{margin:0 0 1em}
 .also strong{color:var(--ink);font-weight:600}
 @media (min-width:900px){
   .concerns .wrap{grid-template-columns:4fr 7fr;gap:72px}
-  .concerns-intro{position:sticky;top:32px;align-self:start}
+  .concerns-intro{position:sticky;top:calc(var(--sw-h,0px) + 32px);align-self:start}
   .primary li{grid-template-columns:15rem 1fr;gap:24px;align-items:baseline}
 }
 
@@ -159,7 +159,7 @@ p{margin:0 0 1em}
 .facts dd{margin:0}
 @media (min-width:900px){
   .about .wrap{grid-template-columns:5fr 6fr;gap:80px;align-items:start}
-  .quote{position:sticky;top:40px;padding-top:8px}
+  .quote{position:sticky;top:calc(var(--sw-h,0px) + 40px);padding-top:8px}
 }
 
 /* reviews */
