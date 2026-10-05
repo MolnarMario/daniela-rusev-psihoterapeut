@@ -18,8 +18,10 @@ Datele vin din două rapoarte de cercetare și din profilul ISTT. Unele nu sunt 
 1. Fotografia e preluată de pe profilul ISTT. Trebuie confirmat că o putem folosi sau înlocuită cu una nouă.
 2. Adresa de e-mail `dfocica@yahoo.com` apare doar pe Mapcarta. Trebuie confirmată.
 3. Tariful și durata ședinței lipsesc intenționat. Dacă vrea să le afișeze, se completează în secțiunea de întrebări.
-4. Lucrul cu adolescenți și orientarea vocațională apar într-un singur raport, fără sursă solidă.
+4. Adolescenții apar doar în întrebări, la cererea Danielei. Orientarea vocațională a fost scoasă.
 5. Notele din recenzii (4,8 DoctorBun, 10/10 la-psiholog.ro) și citatul din recenzie trebuie verificate la sursă. Textele complete ale recenziilor se pot adăuga doar cu acordul autorilor.
 6. Paragraful despre gândirea sistemică din cibernetică e o interpretare. Daniela trebuie să-l aprobe sau să-l rescrie în cuvintele ei.
 7. Nu știm dacă face ședințe online. Dacă da, merită adăugat în hero și în întrebări.
 8. Textul folosește "tu". Dacă preferă "dumneavoastră", se schimbă global.
+9. Metoda Călătoria apare la "Cum lucrez" și la formare, fără titlu de acreditare. Daniela nu e pe lista de practicieni acreditați de pe metodacalatoria.ro, iar regulile metodei spun că doar practicienii acreditați pot cere bani pentru ședințe. Trebuie să ne spună dacă scriem "practician acreditat", "în curs de acreditare" sau altă formulare.
+10. Pe metodacalatoria.ro, o ședință de Călătoria durează între 1 și 3 ore. Dacă vrea s-o menționăm, intră în întrebări.
