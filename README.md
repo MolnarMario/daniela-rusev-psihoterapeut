@@ -6,7 +6,7 @@ Sunt trei variante de design, ca să alegem sau să combinăm. Bara din dreapta 
 
 - `index.html`, varianta 1, "Editorial". Respectă ghidul anti-"look de AI": hero asimetric, paletă luată din fotografie (bleumarin, roșu de mac, prună), Fraunces cu Instrument Sans, fără carduri decorative.
 - `varianta-2/`, "Briză". Fără restricții de design: hero centrat, carduri, gradienți și animații la scroll, pe fond deschis în verde mentă și albastru.
-- `varianta-3/`, "Senin". Luminoasă, în verde salvie. Are elemente care lipsesc din celelalte: hero cu poza pe jumătate de ecran, mini-test "Te regăsești?", secțiune cu mituri despre terapie, povestea sub formă de scrisoare semnată, listă cu ce să pregătești pentru primul telefon.
+- `varianta-3/`, "Senin". Luminoasă, în verde salvie. Are elemente care lipsesc din celelalte: hero cu portret în formă de arcadă, mini-test "Te regăsești?", secțiune cu mituri despre terapie, povestea sub formă de scrisoare semnată, listă cu ce să pregătești pentru primul telefon.
 - `img/` conține fotografia în WebP și JPG, la 480 și 900 px, plus `og.jpg` pentru preview pe rețele sociale.
 
 Când alegem varianta finală, scoatem `switcher.js` și linia `<script>` care îl încarcă.
