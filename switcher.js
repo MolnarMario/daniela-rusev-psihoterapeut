@@ -2,7 +2,7 @@
 (function () {
   var VARIANTS = [
     { n: 1, name: 'Editorial', path: '' },
-    { n: 2, name: 'Nocturn', path: 'varianta-2/' },
+    { n: 2, name: 'Briză', path: 'varianta-2/' },
     { n: 3, name: 'Senin', path: 'varianta-3/' }
   ];
   var base = document.currentScript.src.replace(/switcher\.js.*$/, '');
