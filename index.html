@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ro">
+<html lang="ro" data-variant="1">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -221,6 +221,7 @@ p{margin:0 0 1em}
 .callbar a{flex:1;max-width:420px;justify-content:center}
 @media (min-width:880px){.callbar{display:none}}
 </style>
+<script src="switcher.js"></script>
 </head>
 <body>
 <a class="skip" href="#continut">Sari la conținut</a>
@@ -229,8 +230,8 @@ p{margin:0 0 1em}
   <div class="wrap">
     <a class="brand" href="#">Daniela Rusev<small>psihoterapeut, Drumul Taberei</small></a>
     <nav class="nav" aria-label="Navigare">
-      <a href="#cu-ce-te-ajut">Cu ce te ajut</a>
-      <a href="#cum-lucrez">Cum lucrez</a>
+      <a href="#servicii">Cu ce te ajut</a>
+      <a href="#metode">Cum lucrez</a>
       <a href="#despre">Despre mine</a>
       <a href="#intrebari">Întrebări</a>
       <a href="#contact">Contact</a>
@@ -240,7 +241,7 @@ p{margin:0 0 1em}
 </header>
 
 <main id="continut">
-<section class="hero">
+<section class="hero" id="sus" data-sec="Hero">
   <div class="wrap">
     <div>
       <p class="hero-meta">Psihoterapeut practician autonom, cabinet în Sector 6, București</p>
@@ -248,7 +249,7 @@ p{margin:0 0 1em}
       <p class="hero-lede">Lucrez cu adulți și adolescenți care trec prin anxietate, atacuri de panică, depresie, traume, doliu sau despărțiri. Ne uităm la ce vrei să se schimbe și la resursele pe care le ai deja, apoi construim pașii de acolo.</p>
       <div class="actions">
         <a class="btn" href="tel:+40743482900"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>Sună pentru programare</a>
-        <a class="link-arrow" href="#prima-sedinta">Cum arată prima ședință</a>
+        <a class="link-arrow" href="#pasi">Cum arată prima ședință</a>
       </div>
       <ul class="creds">
         <li>Colegiul Psihologilor din România</li>
@@ -266,7 +267,7 @@ p{margin:0 0 1em}
   </div>
 </section>
 
-<section class="concerns" id="cu-ce-te-ajut">
+<section class="concerns" id="servicii" data-sec="Servicii">
   <div class="wrap">
     <div class="concerns-intro">
       <h2>Cu ce vin oamenii la mine</h2>
@@ -284,7 +285,7 @@ p{margin:0 0 1em}
   </div>
 </section>
 
-<section class="method" id="cum-lucrez">
+<section class="method" id="metode" data-sec="Metode">
   <div class="wrap">
     <p class="lead">Prefer terapiile scurte, colaborative, orientate pe resurse. Tu cunoști viața ta mai bine decât oricine. <span>Eu aduc metodele și întrebările potrivite.</span></p>
     <dl class="methods">
@@ -308,7 +309,7 @@ p{margin:0 0 1em}
   </div>
 </section>
 
-<section class="steps" id="prima-sedinta">
+<section class="steps" id="pasi" data-sec="Pași">
   <div class="wrap">
     <h2 class="sec-title">Ce se întâmplă după ce suni</h2>
     <ol>
@@ -320,7 +321,7 @@ p{margin:0 0 1em}
   </div>
 </section>
 
-<section class="about" id="despre">
+<section class="about" id="despre" data-sec="Despre">
   <div class="wrap">
     <blockquote class="quote">
       Viața e neprețuită, viața e frumoasă! Tocmai de aceea merită trăită frumos, liber de răni, iubit și iubind.
@@ -341,7 +342,7 @@ p{margin:0 0 1em}
   </div>
 </section>
 
-<section class="reviews" aria-labelledby="rev-title">
+<section class="reviews" id="recenzii" data-sec="Recenzii" aria-labelledby="rev-title">
   <div class="wrap">
     <figure class="pull">
       <h2 id="rev-title" class="sec-title" style="font-size:1rem;font-family:var(--sans);font-weight:500;color:var(--ink-soft);margin-bottom:18px">Ce spun clienții</h2>
@@ -356,7 +357,7 @@ p{margin:0 0 1em}
   </div>
 </section>
 
-<section class="media" aria-labelledby="media-title">
+<section class="media" id="media" data-sec="Media" aria-labelledby="media-title">
   <div class="wrap">
     <button class="video" type="button" data-yt="FqFHUbMxMdk" aria-label="Pornește interviul de la Speranța TV">
       <img src="https://i.ytimg.com/vi/FqFHUbMxMdk/hqdefault.jpg" alt="" loading="lazy" width="480" height="360">
@@ -370,7 +371,7 @@ p{margin:0 0 1em}
   </div>
 </section>
 
-<section class="faq" id="intrebari">
+<section class="faq" id="intrebari" data-sec="Întrebări">
   <div class="wrap">
     <h2 class="sec-title">Întrebări înainte de prima ședință</h2>
     <div>
@@ -398,7 +399,7 @@ p{margin:0 0 1em}
   </div>
 </section>
 
-<section class="contact" id="contact">
+<section class="contact" id="contact" data-sec="Contact">
   <div class="wrap">
     <div>
       <h2>Programări</h2>
@@ -419,7 +420,6 @@ p{margin:0 0 1em}
   <div class="wrap">
     <p class="crisis">Dacă ești în pericol imediat, sună la 112. Telefonul Antisuicid al Alianței Române de Prevenție a Suicidului: <a href="tel:0800801200">0800 801 200</a>, apel gratuit.</p>
     <p>Daniela Rusev, psihoterapeut practician autonom. Bulevardul Drumul Taberei nr. 29, Sector 6, București.</p>
-    <p><a href="varianta-libera/">Vezi varianta alternativă de design</a></p>
   </div>
 </footer>
 
