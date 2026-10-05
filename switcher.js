@@ -12,7 +12,6 @@
   css.textContent =
     ':root{--sw-h:44px}' +
     'body{padding-top:var(--sw-h)!important}' +
-    '[data-sec]{scroll-margin-top:calc(var(--sw-h) + 72px)}' +
     '.sw-bar{position:fixed;top:0;left:0;right:0;height:var(--sw-h);z-index:1000;display:flex;align-items:center;justify-content:flex-end;gap:8px;padding:0 8px 0 14px;background:#151515;color:#ddd;font:500 13px/1 system-ui,-apple-system,"Segoe UI",sans-serif}' +
     '.sw-title{margin-right:auto;color:#999;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}' +
     '.sw-seg{display:flex;background:#2b2b2b;border-radius:8px;padding:3px}' +

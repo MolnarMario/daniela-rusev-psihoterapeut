@@ -2,7 +2,7 @@
 <html lang="ro" data-variant="2">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Daniela Rusev, psihoterapeut | Drumul Taberei, București</title>
 <meta name="description" content="Psihoterapie scurtă, orientată pe soluții, pentru anxietate, atacuri de panică, depresie, traume, doliu și despărțiri. Cabinet în Drumul Taberei 29, Sector 6, București. Programări: 0743 482 900.">
 <meta name="theme-color" content="#eaf6f2">
@@ -33,12 +33,14 @@
   --sans:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;
 }
 *,*::before,*::after{box-sizing:border-box}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent}
+[id]{scroll-margin-top:calc(var(--sw-h,0px) + 92px)}
 body{margin:0;background:var(--bg);color:var(--text);font:400 1.05rem/1.7 var(--sans);overflow-x:hidden}
 img{display:block;max-width:100%;height:auto}
 a{color:inherit}
-h1,h2,h3{margin:0;line-height:1.08}
-.wrap{max-width:1180px;margin:0 auto;padding:0 clamp(16px,4vw,40px)}
+h1,h2,h3{margin:0;line-height:1.08;text-wrap:balance}
+p{text-wrap:pretty}
+.wrap{max-width:1180px;margin:0 auto;padding:0 max(clamp(16px,4vw,40px),env(safe-area-inset-right)) 0 max(clamp(16px,4vw,40px),env(safe-area-inset-left))}
 .grad-text{background:var(--grad-ink);-webkit-background-clip:text;background-clip:text;color:transparent}
 .btn{display:inline-flex;align-items:center;gap:10px;padding:15px 28px;border-radius:999px;font-weight:700;text-decoration:none;transition:transform .25s,box-shadow .25s,background .25s}
 .btn-primary{background:var(--grad);color:#0d2b31;box-shadow:0 10px 30px -10px rgba(36,115,173,.45)}
@@ -59,7 +61,24 @@ section{position:relative;padding:110px 0}
 .nav ul a{text-decoration:none;transition:color .2s}
 .nav ul a:hover{color:var(--text)}
 .nav .btn{padding:10px 20px;font-size:.9rem}
+.menu-btn,.menu{display:none}
 @media (min-width:900px){.nav ul{display:flex}}
+@media (max-width:899px){
+  .nav{padding:6px 6px 6px 20px;width:calc(100% - 24px - env(safe-area-inset-left) - env(safe-area-inset-right))}
+  .nav .logo{font-size:1.3rem}
+  .nav>.btn{display:none}
+  .menu-btn{display:inline-flex;align-items:center;gap:8px;min-height:44px;max-width:56vw;padding:0 16px 0 18px;border:0;border-radius:999px;background:var(--grad);color:#0d2b31;font:700 .9rem var(--sans);cursor:pointer}
+  .menu-btn span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .menu-btn svg{flex:none;width:16px;height:16px;transition:transform .25s}
+  .menu-btn[aria-expanded="true"] svg{transform:rotate(180deg)}
+  .menu{position:absolute;left:0;right:0;top:calc(100% + 8px);max-height:calc(100dvh - var(--sw-h,0px) - 96px);overflow-y:auto;overscroll-behavior:contain;padding:8px;border-radius:26px;background:#fff;border:1px solid var(--glass-b);box-shadow:0 30px 60px -20px rgba(21,51,59,.35)}
+  .menu:not([hidden]){display:block}
+  .menu ol{list-style:none;margin:0;padding:0;display:grid;gap:2px}
+  .menu ol a{display:flex;align-items:center;justify-content:space-between;min-height:48px;padding:0 16px;border-radius:16px;text-decoration:none;font-weight:600;color:var(--text)}
+  .menu ol a[aria-current]{background:linear-gradient(120deg,#e1f5ec,#e2f0fb);color:var(--green)}
+  .menu ol a[aria-current]::after{content:"ești aici";font-size:.78rem;font-weight:700;letter-spacing:.04em}
+  .menu .btn{display:flex;justify-content:center;margin:8px 0 0;padding:15px 20px;font-size:1rem}
+}
 
 /* hero */
 .hero{position:relative;min-height:100svh;display:grid;place-items:center;text-align:center;padding:140px 0 90px;overflow:hidden;background:linear-gradient(180deg,#eaf6f2 0%,var(--bg) 100%)}
@@ -183,9 +202,55 @@ section{position:relative;padding:110px 0}
 footer{padding:50px 0 110px;color:var(--muted);font-size:.88rem;text-align:center}
 footer a{color:var(--text)}
 footer p{margin:6px 0}
-.fab{position:fixed;right:18px;bottom:18px;z-index:40;display:flex}
-.fab .btn{box-shadow:0 14px 34px -8px rgba(36,115,173,.55)}
+.fab{position:fixed;left:max(16px,env(safe-area-inset-left));right:max(16px,env(safe-area-inset-right));bottom:calc(14px + env(safe-area-inset-bottom));z-index:40;display:flex;justify-content:center;transition:transform .3s ease,opacity .3s ease,visibility 0s}
+.fab .btn{flex:1;max-width:420px;justify-content:center;min-height:52px;box-shadow:0 14px 34px -8px rgba(36,115,173,.55)}
+.js .fab:not(.show),.menu-open .fab{transform:translateY(130%);opacity:0;visibility:hidden;transition:transform .3s ease,opacity .3s ease,visibility 0s .3s}
 @media (min-width:900px){footer{padding-bottom:50px}.fab{display:none}}
+
+/* telefon */
+@media (max-width:899px){
+  section{padding:64px 0}
+  .sec-head{margin-bottom:32px}
+  .sec-head h2,.about-text h2,.contact-card h2{font-size:clamp(2.1rem,1.5rem + 3vw,2.6rem);margin:14px 0 12px}
+  .hero{min-height:0;padding:104px 0 80px}
+  .avatar{width:104px;height:104px;margin-bottom:22px}
+  .eyebrow{font-size:.7rem;letter-spacing:.1em;text-align:center}
+  .hero h1{margin:18px auto 16px}
+  .hero p.lede{font-size:1.06rem;margin-bottom:28px}
+  .hero .ctas{flex-direction:column;align-items:stretch;max-width:380px;margin:0 auto}
+  .hero .ctas .btn{justify-content:center;min-height:52px}
+  .scroll-cue{display:none}
+  .trust{margin-top:-36px}
+  .trust-grid{border-radius:20px}
+  .trust-grid div{padding:20px 12px}
+  .trust-grid b{font-size:2.1rem}
+  .cards,.method-grid,.t-grid{gap:14px}
+  .card{padding:24px 22px;border-radius:22px}
+  .icon{width:48px;height:48px;margin-bottom:16px}
+  .tags{margin-top:28px;gap:8px}
+  .about-grid{gap:40px}
+  .photo-frame{max-width:240px}
+  .badge{right:-6px;bottom:20px;padding:12px 16px}
+  .big-quote{padding:64px 0}
+  .m-card,.t-card{padding:24px;border-radius:22px}
+  .m-card .num{font-size:2.6rem}
+  .t-card p{font-size:1.45rem}
+  .t-card.score b{font-size:3.2rem}
+  .step{padding:20px;gap:16px;border-radius:18px}
+  .step::before{width:40px;height:40px}
+  .faq details{padding:0 18px;border-radius:16px}
+  .faq summary{padding:18px 30px 18px 0}
+  .video .play{width:68px;height:68px;box-shadow:0 0 0 8px rgba(255,255,255,.35)}
+  .contact-card{gap:28px;border-radius:28px}
+  .c-list{margin:20px 0 24px}
+  .contact-card .btn{width:100%;justify-content:center}
+  .map{min-height:260px;border-radius:18px}
+}
+@media (hover:none){
+  .btn-primary:hover,.card:hover{transform:none}
+  .card:hover::before{opacity:0}
+  .video:hover img{transform:none}
+}
 
 /* reveal */
 .reveal{opacity:0;transform:translateY(40px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
@@ -197,7 +262,8 @@ footer p{margin:6px 0}
   .reveal{opacity:1;transform:none;transition:none}
 }
 </style>
-<script src="../switcher.js?v=2"></script>
+<script>document.documentElement.classList.add("js")</script>
+<script src="../switcher.js?v=3"></script>
 </head>
 <body>
 
@@ -210,6 +276,20 @@ footer p{margin:6px 0}
     <li><a href="#intrebari">Întrebări</a></li>
   </ul>
   <a class="btn btn-primary" href="#contact">Programare</a>
+  <button class="menu-btn" type="button" aria-expanded="false" aria-controls="meniu" aria-label="Meniu"><span>Meniu</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+  <div class="menu" id="meniu" hidden>
+    <ol>
+      <li><a href="#servicii">Servicii</a></li>
+      <li><a href="#despre">Despre mine</a></li>
+      <li><a href="#metode">Metode</a></li>
+      <li><a href="#pasi">Primii pași</a></li>
+      <li><a href="#recenzii">Recenzii</a></li>
+      <li><a href="#media">Interviu TV</a></li>
+      <li><a href="#intrebari">Întrebări</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ol>
+    <a class="btn btn-primary" href="tel:+40743482900">Sună: 0743 482 900</a>
+  </div>
 </nav>
 
 <header class="hero" id="sus" data-sec="Hero">
@@ -219,7 +299,7 @@ footer p{margin:6px 0}
     <span class="eyebrow reveal d1">Psihoterapeut · Drumul Taberei, București</span>
     <h1 class="reveal d1">Viața merită trăită <i class="grad-text">frumos</i>.</h1>
     <p class="lede reveal d2">Liber de răni, iubit și iubind. Te însoțesc prin anxietate, traume, depresie, doliu sau despărțiri, cu terapii scurte și orientate pe soluții.</p>
-    <div class="ctas reveal d3">
+    <div class="ctas reveal d3" data-hide-callbar>
       <a class="btn btn-primary" href="tel:+40743482900">Sună: 0743 482 900</a>
       <a class="btn btn-ghost" href="#servicii">Descoperă cum te pot ajuta</a>
     </div>
@@ -378,7 +458,7 @@ footer p{margin:6px 0}
   </div>
 </section>
 
-<section id="contact" data-sec="Contact" style="padding-top:40px">
+<section id="contact" data-sec="Contact" style="padding-top:40px" data-hide-callbar>
   <div class="wrap">
     <div class="contact-card reveal">
       <div>
@@ -397,15 +477,56 @@ footer p{margin:6px 0}
   </div>
 </section>
 
-<footer>
+<footer data-hide-callbar>
   <div class="wrap">
     <p>Dacă ești în pericol imediat, sună la 112. Telefonul Antisuicid (ARPS): <a href="tel:0800801200">0800 801 200</a>, gratuit.</p>
     <p>Daniela Rusev, psihoterapeut practician autonom</p>
   </div>
 </footer>
 
-<div class="fab"><a class="btn btn-primary" href="tel:+40743482900">Sună acum</a></div>
+<div class="fab"><a class="btn btn-primary" href="tel:+40743482900">Sună: 0743 482 900</a></div>
 
+<script>
+/* telefon: meniu cu sectiunea curenta, bara de progres, bara de apel */
+(function(){
+  var btn=document.querySelector('.menu-btn'),menu=document.getElementById('meniu'),label=btn.querySelector('span');
+  var links=[].slice.call(menu.querySelectorAll('a[href^="#"]'));
+  var secs=links.map(function(a){return document.getElementById(a.getAttribute('href').slice(1));});
+  var prog=document.querySelector('.progress span'),bar=document.querySelector('.callbar,.fab'),cur=-2,ticking=false;
+  function setOpen(o){
+    btn.setAttribute('aria-expanded',o?'true':'false');
+    menu.hidden=!o;
+    document.documentElement.classList.toggle('menu-open',o);
+  }
+  btn.addEventListener('click',function(){setOpen(menu.hidden);});
+  menu.addEventListener('click',function(e){if(e.target.closest('a'))setOpen(false);});
+  document.addEventListener('click',function(e){if(!menu.hidden&&!menu.contains(e.target)&&!btn.contains(e.target))setOpen(false);});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!menu.hidden){setOpen(false);btn.focus();}});
+  function update(){
+    ticking=false;
+    var max=document.documentElement.scrollHeight-innerHeight;
+    if(prog)prog.style.transform='scaleX('+(max>0?Math.min(1,scrollY/max):0)+')';
+    var line=innerHeight*.35,i=-1;
+    secs.forEach(function(s,k){if(s&&s.getBoundingClientRect().top<=line)i=k;});
+    if(i===cur)return;
+    cur=i;
+    links.forEach(function(a,k){if(k===i)a.setAttribute('aria-current','location');else a.removeAttribute('aria-current');});
+    label.textContent=i<0?'Meniu':links[i].textContent;
+    btn.setAttribute('aria-label',i<0?'Meniu':'Meniu, secțiunea curentă: '+links[i].textContent);
+  }
+  addEventListener('scroll',function(){if(!ticking){ticking=true;requestAnimationFrame(update);}},{passive:true});
+  addEventListener('resize',function(){if(!menu.hidden&&!btn.offsetParent)setOpen(false);update();});
+  update();
+  if(!('IntersectionObserver' in window)){bar.classList.add('show');return;}
+  var seen=new Map();
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){seen.set(e.target,e.isIntersecting);});
+    var hide=false;seen.forEach(function(v){if(v)hide=true;});
+    bar.classList.toggle('show',!hide);
+  });
+  document.querySelectorAll('[data-hide-callbar]').forEach(function(el){io.observe(el);});
+})();
+</script>
 <script>
 (function(){
   var els=document.querySelectorAll('.reveal');
