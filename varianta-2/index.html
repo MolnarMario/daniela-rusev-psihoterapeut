@@ -42,32 +42,31 @@ h1,h2,h3{margin:0;line-height:1.08;text-wrap:balance}
 p{text-wrap:pretty}
 .wrap{max-width:1180px;margin:0 auto;padding:0 max(clamp(16px,4vw,40px),env(safe-area-inset-right)) 0 max(clamp(16px,4vw,40px),env(safe-area-inset-left))}
 .grad-text{background:var(--grad-ink);-webkit-background-clip:text;background-clip:text;color:transparent}
-.btn{display:inline-flex;align-items:center;gap:10px;padding:15px 28px;border-radius:999px;font-weight:700;text-decoration:none;transition:transform .25s,box-shadow .25s,background .25s}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:15px 28px;border-radius:14px;font-weight:700;text-decoration:none;transition:transform .25s,box-shadow .25s,background .25s}
 .btn-primary{background:var(--grad);color:#0d2b31;box-shadow:0 10px 30px -10px rgba(36,115,173,.45)}
 .btn-primary:hover{transform:translateY(-2px);box-shadow:0 16px 40px -12px rgba(36,115,173,.55)}
 .btn-ghost{border:1px solid var(--glass-b);background:var(--glass);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
 .btn-ghost:hover{background:#fff}
-.eyebrow{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border-radius:999px;border:1px solid var(--glass-b);background:var(--glass);font-size:.75rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--green)}
-.eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--mint);box-shadow:0 0 8px var(--mint)}
+.eyebrow{display:inline-block;font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--green)}
 section{position:relative;padding:110px 0}
 .sec-head{text-align:center;max-width:680px;margin:0 auto 56px}
 .sec-head h2{font-family:var(--serif);font-weight:600;font-size:clamp(2.3rem,1.6rem + 3vw,3.8rem);margin:18px 0 14px}
 .sec-head p{color:var(--muted);margin:0}
 
 /* nav */
-.nav{position:fixed;top:calc(var(--sw-h,0px) + 12px);left:50%;transform:translateX(-50%);z-index:30;width:min(1100px,calc(100% - 24px));display:flex;align-items:center;justify-content:space-between;padding:10px 12px 10px 22px;border-radius:999px;background:rgba(255,255,255,.75);border:1px solid var(--glass-b);box-shadow:var(--shadow);backdrop-filter:blur(16px) saturate(1.4);-webkit-backdrop-filter:blur(16px) saturate(1.4)}
+.nav{position:fixed;top:calc(var(--sw-h,0px) + 12px);left:50%;transform:translateX(-50%);z-index:30;width:min(1100px,calc(100% - 24px));display:flex;align-items:center;justify-content:space-between;padding:10px 12px 10px 22px;border-radius:20px;background:rgba(255,255,255,.75);border:1px solid var(--glass-b);box-shadow:var(--shadow);backdrop-filter:blur(16px) saturate(1.4);-webkit-backdrop-filter:blur(16px) saturate(1.4)}
 .nav .logo{font-family:var(--serif);font-size:1.4rem;font-weight:600;text-decoration:none}
 .nav ul{display:none;list-style:none;margin:0;padding:0;gap:28px;font-size:.92rem;color:var(--muted)}
 .nav ul a{text-decoration:none;transition:color .2s}
 .nav ul a:hover{color:var(--text)}
-.nav .btn{padding:10px 20px;font-size:.9rem}
+.nav .btn{padding:10px 20px;font-size:.9rem;border-radius:11px}
 .menu-btn,.menu{display:none}
 @media (min-width:900px){.nav ul{display:flex}}
 @media (max-width:899px){
-  .nav{padding:6px 6px 6px 20px;width:calc(100% - 24px - env(safe-area-inset-left) - env(safe-area-inset-right))}
+  .nav{padding:6px 6px 6px 20px;border-radius:16px;width:calc(100% - 24px - env(safe-area-inset-left) - env(safe-area-inset-right))}
   .nav .logo{font-size:1.3rem}
   .nav>.btn{display:none}
-  .menu-btn{display:inline-flex;align-items:center;gap:8px;min-height:44px;max-width:56vw;padding:0 16px 0 18px;border:0;border-radius:999px;background:var(--grad);color:#0d2b31;font:700 .9rem var(--sans);cursor:pointer}
+  .menu-btn{display:inline-flex;align-items:center;gap:8px;min-height:44px;max-width:56vw;padding:0 16px 0 18px;border:0;border-radius:11px;background:var(--grad);color:#0d2b31;font:700 .9rem var(--sans);cursor:pointer}
   .menu-btn span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
   .menu-btn svg{flex:none;width:16px;height:16px;transition:transform .25s}
   .menu-btn[aria-expanded="true"] svg{transform:rotate(180deg)}
@@ -116,8 +115,8 @@ section{position:relative;padding:110px 0}
 .icon svg{width:26px;height:26px;stroke:var(--green)}
 .card h3{font-size:1.25rem;font-weight:700;margin-bottom:10px}
 .card p{color:var(--muted);margin:0;font-size:.98rem}
-.tags{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:40px}
-.tags span{padding:8px 16px;border-radius:999px;border:1px solid var(--glass-b);background:#fff;font-size:.9rem;color:var(--muted)}
+.also{max-width:640px;margin:40px auto 0;text-align:center;color:var(--muted)}
+.also b{color:var(--text);font-weight:700}
 @media (min-width:700px){.cards{grid-template-columns:repeat(2,1fr)}}
 @media (min-width:1050px){.cards{grid-template-columns:repeat(4,1fr)}}
 
@@ -227,7 +226,7 @@ footer p{margin:6px 0}
   .cards,.method-grid,.t-grid{gap:14px}
   .card{padding:24px 22px;border-radius:22px}
   .icon{width:48px;height:48px;margin-bottom:16px}
-  .tags{margin-top:28px;gap:8px}
+  .also{margin-top:28px;font-size:.98rem}
   .about-grid{gap:40px}
   .photo-frame{max-width:240px}
   .badge{right:-6px;bottom:20px;padding:12px 16px}
@@ -347,9 +346,7 @@ footer p{margin:6px 0}
         <p>Sprijin după pierderea unui om drag sau sfârșitul unei relații.</p>
       </article>
     </div>
-    <div class="tags reveal">
-      <span>Fobii</span><span>Stres profesional</span><span>Tulburări de somn</span><span>Alimentație</span><span>Cuplu și familie</span><span>Orientare vocațională</span>
-    </div>
+    <p class="also reveal"><b>Lucrez și cu</b> fobii, stres profesional, tulburări de somn, probleme de alimentație, tensiuni în cuplu și familie, orientare vocațională.</p>
   </div>
 </section>
 
@@ -391,7 +388,7 @@ footer p{margin:6px 0}
     <div class="method-grid">
       <div class="m-card reveal"><div class="num grad-text">01</div><h3>Terapie orientată pe soluții</h3><p>Pornim de la ce vrei să fie diferit și de la resursele pe care le ai deja.</p></div>
       <div class="m-card reveal d1"><div class="num grad-text">02</div><h3>Abordare informată de traumă</h3><p>Psihoterapeut recomandat de ISTT. Siguranța și ritmul tău vin înainte de orice.</p></div>
-      <div class="m-card reveal"><div class="num grad-text">03</div><h3>EFT, eliberare emoțională</h3><p>Atenție pe o emoție combinată cu atingeri ușoare pe puncte de pe față și corp, ca intensitatea ei să scadă.</p></div>
+      <div class="m-card reveal"><div class="num grad-text">03</div><h3>EFT, eliberarea rapidă a emoțiilor</h3><p>Atenție pe o emoție combinată cu atingeri ușoare pe puncte de pe față și corp, ca intensitatea ei să scadă.</p></div>
       <div class="m-card reveal d1"><div class="num grad-text">04</div><h3>NLP</h3><p>Lucrăm cu felul în care îți descrii problema, ca să deschidem alte variante de răspuns.</p></div>
     </div>
   </div>
@@ -407,7 +404,7 @@ footer p{margin:6px 0}
       <div class="step reveal"><div><h3>Suni</h3><p>Îmi spui pe scurt ce te aduce și stabilim o oră.</p></div></div>
       <div class="step reveal d1"><div><h3>Ne cunoaștem</h3><p>Vorbim despre ce te frământă și ce ai vrea să fie altfel.</p></div></div>
       <div class="step reveal d2"><div><h3>Stabilim obiectivul</h3><p>Hotărâm împreună spre ce lucrăm și cât de des ne vedem.</p></div></div>
-      <div class="step reveal d3"><div><h3>Verificăm progresul</h3><p>Terapia se încheie când ai ajuns unde ți-ai propus.</p></div></div>
+      <div class="step reveal d3"><div><h3>Verificăm progresul</h3><p>Ne uităm periodic la ce s-a schimbat și hotărâm împreună care sunt pașii următori.</p></div></div>
     </div>
   </div>
 </section>
@@ -479,7 +476,7 @@ footer p{margin:6px 0}
 
 <footer data-hide-callbar>
   <div class="wrap">
-    <p>Dacă ești în pericol imediat, sună la 112. Telefonul Antisuicid (ARPS): <a href="tel:0800801200">0800 801 200</a>, gratuit.</p>
+    <p>Dacă ești în pericol imediat, sună la 112. Telefonul Antisuicid (ARPS): <a href="tel:0800801200">0800 801 200</a> (vineri–duminică, 19:00–07:00; gratuit). Pentru sprijin telefonic non-stop: <a href="tel:0374456420">depreHUB, 0374 456 420</a>.</p>
     <p>Daniela Rusev, psihoterapeut practician autonom</p>
   </div>
 </footer>
