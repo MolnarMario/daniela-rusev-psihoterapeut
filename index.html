@@ -116,7 +116,9 @@ p{margin:0 0 1em;text-wrap:pretty}
 .btn{display:inline-flex;align-items:center;gap:10px;background:var(--poppy);color:#fff;text-decoration:none;font-weight:600;padding:14px 24px;border-radius:6px;transition:background .15s}
 .btn:hover{background:var(--poppy-dark)}
 .btn svg{width:18px;height:18px}
-.link-arrow{font-weight:500;text-underline-offset:5px}
+.link-arrow{display:inline-flex;align-items:center;gap:6px;font-weight:500;text-underline-offset:5px}
+.link-arrow svg{width:16px;height:16px;color:var(--poppy);transition:transform .15s}
+.link-arrow:hover svg{transform:translateX(3px)}
 .creds{margin:36px 0 0;padding:16px 0 0;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px 22px;font-size:.9rem;color:var(--ink-soft);list-style:none}
 .creds li{display:flex;gap:8px}
 .creds svg{flex:none;width:1.15em;height:1.65em;color:var(--poppy)}
@@ -152,14 +154,16 @@ p{margin:0 0 1em;text-wrap:pretty}
 .concerns-intro p{color:var(--ink-soft);max-width:30em;margin-top:16px}
 .primary{list-style:none;margin:0;padding:0;border-top:1px solid var(--ink)}
 .primary li{display:grid;gap:4px;padding:20px 0;border-bottom:1px solid var(--line)}
-.primary h3{font-size:1.35rem}
+.primary h3{font-size:1.35rem;display:flex;align-items:center;gap:14px}
 .primary p{margin:0;color:var(--ink-soft)}
+.ic{flex:none;display:grid;place-items:center;width:42px;height:42px;border-radius:50%;background:var(--paper-deep);color:var(--poppy)}
+.ic svg{width:21px;height:21px}
 .also{margin-top:28px;font-size:1rem;color:var(--ink-soft)}
 .also strong{color:var(--ink);font-weight:600}
 @media (min-width:900px){
   .concerns .wrap{grid-template-columns:4fr 7fr;gap:72px}
   .concerns-intro{position:sticky;top:calc(var(--sw-h,0px) + 32px);align-self:start}
-  .primary li{grid-template-columns:15rem 1fr;gap:24px;align-items:baseline}
+  .primary li{grid-template-columns:17rem 1fr;gap:24px;align-items:center}
 }
 
 /* method band */
@@ -287,7 +291,12 @@ p{margin:0 0 1em;text-wrap:pretty}
 
 /* dropdown-uri pe telefon (accordion.js) */
 .primary .acc-btn,.steps .acc-btn{--acc-c:var(--poppy)}
-.primary .acc-btn{font-size:inherit}
+.primary .acc-btn{font-size:inherit;justify-content:flex-start}
+.primary .acc-btn::after{margin-left:auto}
+@media (max-width:899px){
+  .primary li{gap:8px;padding:14px 0}
+  .primary p{padding-left:56px}
+}
 .methods .acc-btn{--acc-c:#c8eadb}
 
 /* bara de apel pe telefon: apare dupa hero, dispare la contact */
@@ -326,7 +335,7 @@ p{margin:0 0 1em;text-wrap:pretty}
       <li><a href="#intrebari">Întrebări</a></li>
       <li><a href="#contact">Contact</a></li>
     </ol>
-    <a class="btn" href="tel:+40743482900">Sună: 0743 482 900</a>
+    <a class="btn" href="tel:+40743482900"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>Sună: 0743 482 900</a>
   </nav>
   <div class="progress" aria-hidden="true"><span></span></div>
 </header>
@@ -340,12 +349,12 @@ p{margin:0 0 1em;text-wrap:pretty}
       <p class="hero-lede">Când anxietatea, o pierdere sau o perioadă grea îți schimbă felul de a trăi, nu trebuie să găsești singur toate răspunsurile. Te însoțesc cu răbdare și experiență, în ritmul tău.</p>
       <div class="actions" data-hide-callbar>
         <a class="btn" href="tel:+40743482900"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>Sună pentru programare</a>
-        <a class="link-arrow" href="#pasi">Cum arată prima ședință</a>
+        <a class="link-arrow" href="#pasi">Cum arată prima ședință<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
       </div>
       <ul class="creds">
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg>Atestat de Colegiul Psihologilor din România</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg>Psihoterapeut recomandat de ISTT</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg>Atestată NLP și EFT</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>Atestat de Colegiul Psihologilor din România</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15.48 12.89 1.51 8.53a.5.5 0 0 1-.81.47l-3.58-2.69a1 1 0 0 0-1.2 0l-3.59 2.69a.5.5 0 0 1-.81-.47l1.51-8.53"/><circle cx="12" cy="8" r="6"/></svg>Psihoterapeut recomandat de ISTT</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.42 10.92a1 1 0 0 0-.02-1.84L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.83l8.57 3.91a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg>Atestată NLP și EFT</li>
       </ul>
     </div>
     <figure class="portrait">
@@ -366,10 +375,10 @@ p{margin:0 0 1em;text-wrap:pretty}
     </div>
     <div>
       <ul class="primary">
-        <li><h3>Anxietate și atacuri de panică</h3><p>Inima care o ia la goană fără motiv, gândurile care nu se opresc seara, locurile pe care începi să le eviți.</p></li>
-        <li><h3>Traume</h3><p>Evenimente care au trecut, dar la care corpul încă reacționează ca și cum s-ar întâmpla acum.</p></li>
-        <li><h3>Depresie</h3><p>Zile în care nimic nu mai are gust și orice decizie pare prea grea.</p></li>
-        <li><h3>Doliu și despărțiri</h3><p>Pierderea unui om drag, sfârșitul unei relații, o schimbare pe care n-ai ales-o.</p></li>
+        <li><h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/><path d="M3.22 12H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27"/></svg></span>Anxietate și atacuri de panică</h3><p>Inima care o ia la goană fără motiv, gândurile care nu se opresc seara, locurile pe care începi să le eviți.</p></li>
+        <li><h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M12 7v5l4 2"/></svg></span>Traume</h3><p>Evenimente care au trecut, dar la care corpul încă reacționează ca și cum s-ar întâmpla acum.</p></li>
+        <li><h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 14.9A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.24"/><path d="M8 19v1"/><path d="M8 14v1"/><path d="M16 19v1"/><path d="M16 14v1"/><path d="M12 21v1"/><path d="M12 16v1"/></svg></span>Depresie</h3><p>Zile în care nimic nu mai are gust și orice decizie pare prea grea.</p></li>
+        <li><h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/><path d="m12 13-1-1 2-2-3-3 2-2"/></svg></span>Doliu și despărțiri</h3><p>Pierderea unui om drag, sfârșitul unei relații, o schimbare pe care n-ai ales-o.</p></li>
       </ul>
       <p class="also"><strong>Lucrez și cu:</strong> fobii, stres la locul de muncă, tulburări de somn, probleme legate de alimentație, tensiuni în cuplu și în familie.</p>
     </div>
@@ -517,7 +526,7 @@ p{margin:0 0 1em;text-wrap:pretty}
   </div>
 </footer>
 
-<div class="callbar"><a class="btn" href="tel:+40743482900">Sună: 0743 482 900</a></div>
+<div class="callbar"><a class="btn" href="tel:+40743482900"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>Sună: 0743 482 900</a></div>
 
 <script>
 /* telefon: meniu cu sectiunea curenta, bara de progres, bara de apel */
