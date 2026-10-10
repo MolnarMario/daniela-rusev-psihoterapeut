@@ -158,12 +158,18 @@ p{margin:0 0 1em;text-wrap:pretty}
 .primary p{margin:0;color:var(--ink-soft)}
 .ic{flex:none;display:grid;place-items:center;width:42px;height:42px;border-radius:50%;background:var(--paper-deep);color:var(--poppy)}
 .ic svg{width:21px;height:21px}
-.also{margin-top:28px;font-size:1rem;color:var(--ink-soft)}
-.also strong{color:var(--ink);font-weight:600}
+.also{margin-top:32px}
+.also h3{font-family:var(--sans);font-size:1rem;font-weight:600;letter-spacing:0;color:var(--ink)}
+.also ul{list-style:none;margin:14px 0 0;padding:0;display:grid;gap:12px 24px}
+.also li{display:flex;align-items:center;gap:12px;color:var(--ink-soft)}
+.also .ic{width:34px;height:34px}
+.also .ic svg{width:17px;height:17px}
+@media (min-width:480px){.also ul{grid-template-columns:1fr 1fr}}
 @media (min-width:900px){
   .concerns .wrap{grid-template-columns:4fr 7fr;gap:72px}
   .concerns-intro{position:sticky;top:calc(var(--sw-h,0px) + 32px);align-self:start}
   .primary li{grid-template-columns:17rem 1fr;gap:24px;align-items:center}
+  .also ul{grid-template-columns:17rem 1fr}
 }
 
 /* method band */
@@ -380,7 +386,17 @@ p{margin:0 0 1em;text-wrap:pretty}
         <li><h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 14.9A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.24"/><path d="M8 19v1"/><path d="M8 14v1"/><path d="M16 19v1"/><path d="M16 14v1"/><path d="M12 21v1"/><path d="M12 16v1"/></svg></span>Depresie</h3><p>Zile în care nimic nu mai are gust și orice decizie pare prea grea.</p></li>
         <li><h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/><path d="m12 13-1-1 2-2-3-3 2-2"/></svg></span>Doliu și despărțiri</h3><p>Pierderea unui om drag, sfârșitul unei relații, o schimbare pe care n-ai ales-o.</p></li>
       </ul>
-      <p class="also"><strong>Lucrez și cu:</strong> fobii, stres la locul de muncă, tulburări de somn, probleme legate de alimentație, tensiuni în cuplu și în familie.</p>
+      <div class="also">
+        <h3>Alte teme pe care le abordez</h3>
+        <ul>
+          <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg></span>Fobii</li>
+          <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><rect width="20" height="14" x="2" y="6" rx="2"/></svg></span>Stres la locul de muncă</li>
+          <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg></span>Tulburări de somn</li>
+          <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg></span>Relația cu mâncarea</li>
+          <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>Dificultăți în cuplu</li>
+          <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></span>Tensiuni în familie</li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
