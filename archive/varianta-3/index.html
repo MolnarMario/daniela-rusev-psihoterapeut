@@ -13,10 +13,9 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='16' fill='%235f7d63'/%3E%3Ctext x='16' y='21' font-family='Arial,sans-serif' font-weight='700' font-size='13' fill='%23faf7f0' text-anchor='middle'%3EDR%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="image" href="../img/daniela-480.webp" imagesrcset="../img/daniela-480.webp 480w, ../img/daniela-900.webp 900w" imagesizes="(min-width: 900px) 340px, 150px" fetchpriority="high">
+<link rel="preload" as="image" href="../../img/daniela-480.webp" imagesrcset="../../img/daniela-480.webp 480w, ../../img/daniela-900.webp 900w" imagesizes="(min-width: 900px) 340px, 150px" fetchpriority="high">
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..700&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700&family=Caveat:wght@500&display=swap" rel="stylesheet">
 <script>document.documentElement.classList.add("js")</script>
-<script src="../switcher.js?v=4"></script>
 <style>
 :root{
   --cream:#faf7f0;
@@ -76,7 +75,7 @@ h2{font-size:clamp(1.7rem,1.25rem + 1.6vw,2.4rem)}
 @media (max-width:359px){.brand small{font-size:.72rem}}
 
 /* hero */
-.hero{background:var(--sage-50);padding:36px 0 56px}
+.hero{background:var(--sage-50);padding:28px 0 36px}
 .hero-grid{display:grid;gap:28px}
 .hero-photo{margin:0;width:min(58%,230px);position:relative}
 .hero-photo::before{content:"";position:absolute;inset:14px -14px -14px 14px;border-radius:999px 999px 14px 14px;background:var(--sage-100)}
@@ -88,13 +87,13 @@ h2{font-size:clamp(1.7rem,1.25rem + 1.6vw,2.4rem)}
 .hero .rating span::before{content:"\2605";color:var(--clay);margin-right:6px}
 .hero .loc{margin-top:8px;font-size:.95rem;color:var(--muted)}
 @media (min-width:900px){
-  .hero{padding:80px 0 96px}
+  .hero{padding:56px 0 56px}
   .hero-grid{grid-template-columns:minmax(0,1fr) 340px;gap:80px;align-items:center}
   .hero-photo{width:100%;order:2}
 }
 
 /* self check */
-.check{padding:88px 0}
+.check{padding:52px 0}
 .check .head{max-width:640px;margin-bottom:32px}
 .check .head p{color:var(--muted);margin-top:12px}
 .chips{display:flex;flex-wrap:wrap;gap:10px;margin:0;padding:0;list-style:none}
@@ -109,7 +108,7 @@ h2{font-size:clamp(1.7rem,1.25rem + 1.6vw,2.4rem)}
 .answer .btn[hidden]{display:none}
 
 /* myths */
-.myths{background:var(--forest);color:var(--cream);padding:88px 0}
+.myths{background:var(--forest);color:var(--cream);padding:52px 0}
 .myths h2{color:var(--cream);max-width:20ch}
 .myths .kicker{color:#e2b59b}
 .myth-list{list-style:none;margin:40px 0 0;padding:0;display:grid;gap:36px}
@@ -130,7 +129,7 @@ h2{font-size:clamp(1.7rem,1.25rem + 1.6vw,2.4rem)}
 }
 
 /* steps */
-.steps{padding:72px 0 24px}
+.steps{padding:48px 0 16px}
 .flow{list-style:none;margin:28px 0 0;padding:0;display:grid;gap:4px}
 .flow li{display:flex;gap:16px;align-items:baseline;padding:16px 0;border-bottom:1px dashed var(--line)}
 .flow b{font-family:var(--head);font-size:1.15rem;color:var(--forest);min-width:9.5rem}
@@ -142,7 +141,7 @@ h2{font-size:clamp(1.7rem,1.25rem + 1.6vw,2.4rem)}
 }
 
 /* letter */
-.letter{padding:72px 0 88px}
+.letter{padding:48px 0 52px}
 .letter .wrap{display:grid;gap:40px}
 .paper{background:#fff;border:1px solid var(--line);padding:clamp(24px,5vw,56px);max-width:680px;box-shadow:0 1px 0 var(--line),0 18px 40px -28px rgba(38,57,44,.35)}
 .paper p{font-size:1.08rem}
@@ -155,7 +154,7 @@ h2{font-size:clamp(1.7rem,1.25rem + 1.6vw,2.4rem)}
 @media (min-width:900px){.letter .wrap{grid-template-columns:7fr 4fr;gap:72px}.side{position:sticky;top:calc(var(--sw-h,0px) + 32px)}}
 
 /* reviews */
-.reviews{background:var(--sage-100);padding:80px 0}
+.reviews{background:var(--sage-100);padding:48px 0}
 .reviews blockquote{margin:0 0 40px;font-family:var(--head);font-weight:500;font-size:clamp(1.8rem,1.3rem + 2.2vw,3rem);line-height:1.15;color:var(--forest);max-width:20ch}
 .reviews blockquote footer{font:400 .95rem var(--body);color:var(--muted);margin-top:14px}
 .nums{display:flex;flex-wrap:wrap;gap:20px 48px;margin:0;padding:0;list-style:none}
@@ -163,7 +162,7 @@ h2{font-size:clamp(1.7rem,1.25rem + 1.6vw,2.4rem)}
 .nums span{color:var(--muted);font-size:.95rem}
 
 /* media */
-.media{padding:88px 0}
+.media{padding:52px 0}
 .vids{display:grid;gap:24px;margin-top:28px}
 .vid{margin:0}
 .vid button,.vid .frame{position:relative;display:block;width:100%;aspect-ratio:16/9;border:0;padding:0;background:#000;cursor:pointer;border-radius:12px;overflow:hidden}
@@ -175,14 +174,14 @@ h2{font-size:clamp(1.7rem,1.25rem + 1.6vw,2.4rem)}
 @media (min-width:800px){.vids{grid-template-columns:1fr 1fr}}
 
 /* faq */
-.faq{padding:24px 0 88px}
+.faq{padding:12px 0 52px}
 .qa{display:grid;gap:28px;margin-top:32px}
 .qa h3{font-size:1.15rem;margin-bottom:6px}
 .qa p{color:var(--muted);margin:0}
 @media (min-width:800px){.qa{grid-template-columns:1fr 1fr;gap:36px 56px}}
 
 /* contact */
-.contact{background:var(--sage-50);padding:88px 0}
+.contact{background:var(--sage-50);padding:52px 0}
 .contact .wrap{display:grid;gap:40px}
 .phone{display:inline-block;font-family:var(--head);font-weight:600;font-size:clamp(2rem,1.4rem + 2.4vw,3rem);color:var(--forest);text-decoration:none;margin:16px 0 4px}
 .contact address{font-style:normal;margin:20px 0 6px}
@@ -206,35 +205,35 @@ h2{font-size:clamp(1.7rem,1.25rem + 1.6vw,2.4rem)}
 
 /* telefon: ritm vertical mai strans */
 @media (max-width:899px){
-  .hero{padding:24px 0 48px}
+  .hero{padding:20px 0 32px}
   .hero-grid{gap:24px}
   .hero-photo{width:150px}
   .hero-photo::before{inset:10px -10px -10px 10px}
   .hero .intro{font-size:1.06rem;margin:16px 0 24px}
   .hero .btn{width:100%;justify-content:center;min-height:52px}
   .hero .rating{display:grid;gap:4px;margin-top:20px}
-  .check,.myths,.media,.contact{padding:56px 0}
+  .check,.myths,.media,.contact{padding:36px 0}
   .check .head{margin-bottom:24px}
   .answer{min-height:0;margin-top:20px;padding:18px 20px}
   .answer .btn{width:100%;justify-content:center}
   .myth-list{margin-top:28px;gap:28px}
   .tools{margin-top:36px;padding-top:28px}
-  .steps{padding:56px 0 8px}
+  .steps{padding:36px 0 4px}
   .flow{margin-top:20px}
   .flow li{flex-direction:column;gap:2px;padding:14px 0}
   .flow b{min-width:0}
-  .letter{padding:48px 0 56px}
+  .letter{padding:32px 0 36px}
   .letter .wrap{gap:32px}
   .paper{padding:24px 22px}
   .sign{font-size:2.1rem}
   .side{display:grid;grid-template-columns:96px 1fr;gap:20px;align-items:start}
   .side img{width:96px;margin:0}
-  .reviews{padding:56px 0}
+  .reviews{padding:36px 0}
   .reviews blockquote{margin-bottom:28px}
   .nums{gap:16px 32px}
   .nums b{font-size:1.8rem}
   .vids{gap:20px}
-  .faq{padding:8px 0 56px}
+  .faq{padding:4px 0 36px}
   .qa{gap:22px;margin-top:24px}
   .contact .wrap{gap:28px}
   .prep{padding:22px}
@@ -243,6 +242,11 @@ h2{font-size:clamp(1.7rem,1.25rem + 1.6vw,2.4rem)}
 @media (max-width:420px){
   .side{grid-template-columns:1fr}
 }
+
+/* dropdown-uri pe telefon (accordion.js) */
+.acc-btn{--acc-c:var(--sage)}
+.myths .acc-btn,.tools .acc-btn{--acc-c:#e2b59b}
+.flow .acc-body{display:block}
 </style>
 </head>
 <body>
@@ -272,8 +276,8 @@ h2{font-size:clamp(1.7rem,1.25rem + 1.6vw,2.4rem)}
 <div class="wrap hero-grid">
   <figure class="hero-photo">
     <picture>
-      <source type="image/webp" srcset="../img/daniela-480.webp 480w, ../img/daniela-900.webp 900w" sizes="(min-width: 900px) 340px, 150px">
-      <img src="../img/daniela-480.jpg" srcset="../img/daniela-480.jpg 480w, ../img/daniela-900.jpg 900w" sizes="(min-width: 900px) 340px, 150px" width="480" height="600" alt="Daniela Rusev, psihoterapeut" fetchpriority="high">
+      <source type="image/webp" srcset="../../img/daniela-480.webp 480w, ../../img/daniela-900.webp 900w" sizes="(min-width: 900px) 340px, 150px">
+      <img src="../../img/daniela-480.jpg" srcset="../../img/daniela-480.jpg 480w, ../../img/daniela-900.jpg 900w" sizes="(min-width: 900px) 340px, 150px" width="480" height="600" alt="Daniela Rusev, psihoterapeut" fetchpriority="high">
     </picture>
   </figure>
   <div class="hero-body">
@@ -356,7 +360,7 @@ h2{font-size:clamp(1.7rem,1.25rem + 1.6vw,2.4rem)}
       <p class="sign">Daniela</p>
     </div>
     <aside class="side">
-      <img src="../img/daniela-480.webp" width="480" height="670" alt="" loading="lazy">
+      <img src="../../img/daniela-480.webp" width="480" height="670" alt="" loading="lazy">
       <dl>
         <div><dt>Drept de practică</dt><dd>Psihoterapeut practician autonom, Colegiul Psihologilor din România</dd></div>
         <div><dt>Afiliere</dt><dd><a href="https://www.istt.ro/k_member/daniela-rusev/" rel="noopener">Psihoterapeut recomandat ISTT</a></dd></div>
@@ -504,5 +508,6 @@ h2{font-size:clamp(1.7rem,1.25rem + 1.6vw,2.4rem)}
   });
 })();
 </script>
+<script src="../../accordion.js?v=1" data-groups='[{"item":".myth-list li","head":".myth","body":".truth"},{"item":".tools>div","head":"h3","body":"p"},{"item":".flow li","head":"b","body":"span"},{"item":".qa>div","head":"h3","body":"p"}]'></script>
 </body>
 </html>

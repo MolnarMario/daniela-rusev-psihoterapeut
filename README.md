@@ -1,15 +1,16 @@
 # Daniela Rusev, site de prezentare
 
-Site static pentru cabinetul de psihoterapie al Danielei Rusev (Drumul Taberei 29, București). Nu are build și nici framework. Fiecare variantă e un singur fișier HTML cu CSS inline.
+Site static pentru cabinetul de psihoterapie al Danielei Rusev (Drumul Taberei 29, București). Nu are build și nici framework. Pagina e un singur fișier HTML cu CSS inline.
 
-Sunt trei variante de design, ca să alegem sau să combinăm. Bara din dreapta sus (`switcher.js`) trece de la una la alta și păstrează secțiunea la care ești. Butonul "Etichete" numerotează secțiunile (de exemplu "2.4 Despre"), ca să putem spune ce piese luăm din fiecare.
+Lucrăm doar pe varianta "Editorial", care e acum pagina principală. Respectă ghidul anti-"look de AI": hero asimetric, paletă luată din fotografie (bleumarin, roșu de mac, prună), Fraunces cu Instrument Sans, fără carduri decorative.
 
-- `index.html`, varianta 1, "Briză". Fără restricții de design: hero centrat, carduri, gradienți și animații la scroll, pe fond deschis în verde mentă și albastru.
-- `varianta-2/`, "Editorial". Respectă ghidul anti-"look de AI": hero asimetric, paletă luată din fotografie (bleumarin, roșu de mac, prună), Fraunces cu Instrument Sans, fără carduri decorative.
-- `varianta-3/`, "Senin". Luminoasă, în verde salvie. Are elemente care lipsesc din celelalte: hero cu portret în formă de arcadă, mini-test "Te regăsești?", secțiune cu mituri despre terapie, povestea sub formă de scrisoare semnată, listă cu ce să pregătești pentru primul telefon.
+- `index.html` e site-ul. Încarcă `accordion.js` (dropdown-uri pe telefon) și imaginile din `img/`.
 - `img/` conține fotografia în WebP și JPG, la 480 și 900 px, plus `og.jpg` pentru preview pe rețele sociale.
-
-Când alegem varianta finală, scoatem `switcher.js` și linia `<script>` care îl încarcă.
+- `varianta-2/index.html` e doar o redirecționare spre pagina principală, ca linkurile vechi să nu se strice.
+- `archive/` păstrează celelalte variante, în caz că le vrem înapoi. Nu sunt legate din site.
+  - `archive/varianta-1/`, "Briză": hero centrat, carduri, gradienți și animații la scroll, pe fond mentă și albastru.
+  - `archive/varianta-3/`, "Senin": luminoasă, în verde salvie, cu hero în formă de arcadă, mini-test "Te regăsești?", mituri despre terapie și povestea sub formă de scrisoare.
+  - `archive/switcher.js` era bara de comutare între variante. Nu mai e încărcată nicăieri și are căile vechi.
 
 ## De verificat cu Daniela înainte de lansare
 
