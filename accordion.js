@@ -5,6 +5,8 @@
   var cfg;
   try { cfg = JSON.parse(document.currentScript.getAttribute('data-groups')); } catch (e) { return; }
   if (!cfg || !window.matchMedia) return;
+  /* în modul de editare (editor.js) tot textul rămâne deschis și editabil */
+  if (document.documentElement.classList.contains('editing')) return;
 
   var mq = matchMedia('(max-width:899px)');
   var reduce = matchMedia('(prefers-reduced-motion: reduce)');

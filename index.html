@@ -312,7 +312,11 @@ p{margin:0 0 1em;text-wrap:pretty}
 @media (min-width:880px){.callbar{display:none}}
 @media (prefers-reduced-motion:reduce){.callbar,.js .callbar:not(.show){transition:none}}
 </style>
-<script>document.documentElement.classList.add('js')</script>
+<script>
+document.documentElement.classList.add('js');
+/* ?edit în adresă pornește modul de editare pentru client (editor.js) */
+if(/[?&]edit\b/.test(location.search)){document.documentElement.classList.add('editing');document.head.appendChild(Object.assign(document.createElement('script'),{src:'editor.js?v=1'}));}
+</script>
 </head>
 <body>
 <a class="skip" href="#continut">Sari la conținut</a>
@@ -522,7 +526,6 @@ p{margin:0 0 1em;text-wrap:pretty}
       <h2>Programări</h2>
       <a class="phone-big" href="tel:+40743482900">0743 482 900</a>
       <ul class="reach">
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg><span>sau pe e-mail la <a href="mailto:dfocica@yahoo.com">dfocica@yahoo.com</a></span></li>
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 4.99-5.54 10.19-7.4 11.8a1 1 0 0 1-1.2 0C9.54 20.19 4 14.99 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg><address>Bulevardul Drumul Taberei nr. 29<br>Sector 6, București, 061416</address></li>
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3.1V7a4 4 0 0 0 8 0V3.1"/><path d="m9 15-1-1"/><path d="m15 15 1-1"/><path d="M9 19c-2.8 0-5-2.2-5-5v-4a8 8 0 0 1 16 0v4c0 2.8-2.2 5-5 5Z"/><path d="m8 19-2 3"/><path d="m16 19 2 3"/></svg><span>Cabinetul e aproape de Favorit și de străzile Râul Dorna și Sibiu. Pe bulevard circulă metroul M5.</span></li>
       </ul>
@@ -599,6 +602,6 @@ document.querySelectorAll('[data-yt]').forEach(function(b){
   },{once:true});
 });
 </script>
-<script src="accordion.js?v=1" data-groups='[{"item":".primary li","head":"h3","body":"p"},{"item":".methods>div","head":"dt","body":"dd"},{"item":".steps li","head":"h3","body":"p"}]'></script>
+<script src="accordion.js?v=2" data-groups='[{"item":".primary li","head":"h3","body":"p"},{"item":".methods>div","head":"dt","body":"dd"},{"item":".steps li","head":"h3","body":"p"}]'></script>
 </body>
 </html>
