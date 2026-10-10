@@ -118,8 +118,8 @@ p{margin:0 0 1em;text-wrap:pretty}
 .btn svg{width:18px;height:18px}
 .link-arrow{font-weight:500;text-underline-offset:5px}
 .creds{margin:36px 0 0;padding:16px 0 0;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px 22px;font-size:.9rem;color:var(--ink-soft);list-style:none}
-.creds li{padding-left:14px;position:relative}
-.creds li::before{content:"";position:absolute;left:0;top:.62em;width:6px;height:6px;background:var(--poppy)}
+.creds li{display:flex;gap:8px}
+.creds svg{flex:none;width:1.15em;height:1.65em;color:var(--poppy)}
 .portrait{position:relative;justify-self:end;width:min(72%,380px);margin-right:12px}
 .portrait::before{content:"";position:absolute;inset:18px -12px -12px 18px;background:var(--ink)}
 .portrait img{position:relative;width:100%;aspect-ratio:1352/1888;object-fit:cover}
@@ -248,7 +248,10 @@ p{margin:0 0 1em;text-wrap:pretty}
 .phone-big{display:inline-block;font-family:var(--serif);font-size:clamp(2rem,1.4rem + 2.4vw,3rem);text-decoration:none;margin:18px 0 6px;border-bottom:2px solid var(--poppy);line-height:1.15}
 .contact p{color:rgba(243,248,247,.8)}
 .contact a{color:var(--paper)}
-.addr{font-style:normal;line-height:1.6;margin-bottom:12px}
+.reach{list-style:none;margin:14px 0 0;padding:0;display:grid;gap:14px;color:rgba(243,248,247,.8)}
+.reach li{display:flex;gap:12px}
+.reach svg{flex:none;width:20px;height:1.65em;color:var(--mint)}
+.reach address{font-style:normal}
 .map{width:100%;aspect-ratio:4/3;border:0;filter:grayscale(.4) contrast(1.05);background:#15333b}
 .map-link{display:inline-block;margin-top:12px;font-size:.95rem}
 @media (min-width:900px){.contact .wrap{grid-template-columns:5fr 6fr;gap:72px}}
@@ -340,9 +343,9 @@ p{margin:0 0 1em;text-wrap:pretty}
         <a class="link-arrow" href="#pasi">Cum arată prima ședință</a>
       </div>
       <ul class="creds">
-        <li>Atestat de Colegiul Psihologilor din România</li>
-        <li>Psihoterapeut recomandat de ISTT</li>
-        <li>Atestată NLP și EFT</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg>Atestat de Colegiul Psihologilor din România</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg>Psihoterapeut recomandat de ISTT</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg>Atestată NLP și EFT</li>
       </ul>
     </div>
     <figure class="portrait">
@@ -493,9 +496,11 @@ p{margin:0 0 1em;text-wrap:pretty}
     <div>
       <h2>Programări</h2>
       <a class="phone-big" href="tel:+40743482900">0743 482 900</a>
-      <p>sau pe e-mail la <a href="mailto:dfocica@yahoo.com">dfocica@yahoo.com</a></p>
-      <address class="addr">Bulevardul Drumul Taberei nr. 29<br>Sector 6, București, 061416</address>
-      <p>Cabinetul e aproape de Favorit și de străzile Râul Dorna și Sibiu. Pe bulevard circulă metroul M5.</p>
+      <ul class="reach">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg><span>sau pe e-mail la <a href="mailto:dfocica@yahoo.com">dfocica@yahoo.com</a></span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 4.99-5.54 10.19-7.4 11.8a1 1 0 0 1-1.2 0C9.54 20.19 4 14.99 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg><address>Bulevardul Drumul Taberei nr. 29<br>Sector 6, București, 061416</address></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3.1V7a4 4 0 0 0 8 0V3.1"/><path d="m9 15-1-1"/><path d="m15 15 1-1"/><path d="M9 19c-2.8 0-5-2.2-5-5v-4a8 8 0 0 1 16 0v4c0 2.8-2.2 5-5 5Z"/><path d="m8 19-2 3"/><path d="m16 19 2 3"/></svg><span>Cabinetul e aproape de Favorit și de străzile Râul Dorna și Sibiu. Pe bulevard circulă metroul M5.</span></li>
+      </ul>
     </div>
     <div>
       <iframe class="map" title="Hartă: Bulevardul Drumul Taberei 29, București" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Bulevardul+Drumul+Taberei+29,+Bucure%C8%99ti&amp;output=embed"></iframe>
