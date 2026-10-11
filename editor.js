@@ -1,8 +1,10 @@
 /* Mod editare. Se încarcă doar când adresa conține ?edit (vezi scriptul din <head>).
-   Clientul scrie direct în pagină, duplică sau șterge blocuri, apoi apasă Exportă.
+   Clientul scrie direct în pagină, duplică sau șterge blocuri, apoi apasă Salvează și exportă.
    Exportul e un fișier .html: o listă lizibilă cu modificările plus HTML-ul complet,
    înainte și după, în <script id="date-editare">. Pagina publică nu se schimbă.
-   Ciorna se păstrează în localStorage, legată de versiunea paginii (pageHash). */
+   Ciorna se păstrează în localStorage, legată de versiunea paginii (pageHash).
+   După 10 minute de modificări neexportate, marginile ecranului capătă un contur chihlimbariu
+   și butonul pulsează, până la următorul export. */
 (function () {
   'use strict';
 
@@ -47,6 +49,8 @@
   var active = null;
   var hovered = null;
   var saveTimer = 0;
+  var NAG_MS = 10 * 60 * 1000;
+  var pendingSince = 0;
   var stored = true;
   var ui = {};
 
@@ -185,17 +189,27 @@
     var edited = snapshot();
     var changes = diff(base, edited);
     var dirty = JSON.stringify(edited) !== JSON.stringify(base);
+    if (!dirty) pendingSince = 0;
     if (persist) {
       if (!dirty) keep(KEY, null);
       else {
         var prev = load(KEY) || {};
         startedAt = startedAt || Date.now();
-        stored = keep(KEY, { pageHash: pageHash, base: base, edited: edited, startedAt: startedAt, savedAt: Date.now(), exportedAt: prev.exportedAt || 0 });
+        pendingSince = pendingSince || Date.now();
+        stored = keep(KEY, { pageHash: pageHash, base: base, edited: edited, startedAt: startedAt, savedAt: Date.now(), exportedAt: prev.exportedAt || 0, pendingSince: pendingSince });
       }
     }
     ui.status.textContent = plural(changes.length);
     ui.warn.hidden = stored || !dirty;
+    nag();
     return { edited: edited, changes: changes };
+  }
+
+  /* contur chihlimbariu + buton care pulsează după 10 minute fără export */
+  function nag() {
+    var on = !!pendingSince && Date.now() - pendingSince >= NAG_MS;
+    document.documentElement.classList.toggle('ed-nag', on);
+    if (ui.save) ui.save.title = on ? 'Ai modificări nesalvate de peste 10 minute. Salvează și exportă-le acum.' : 'Descarcă un fișier cu toate modificările';
   }
 
   /* ---------- blocuri: selectare, duplicare, ștergere ---------- */
@@ -353,7 +367,9 @@
     var doc = report(data, now);
     var name = 'modificari-site-daniela-rusev-' + stamp(now) + '.html';
     var d = load(KEY);
-    if (d) { d.exportedAt = Date.now(); keep(KEY, d); }
+    pendingSince = 0;
+    if (d) { d.exportedAt = Date.now(); d.pendingSince = 0; keep(KEY, d); }
+    nag();
     var file = null;
     try { file = new File([doc], name, { type: 'text/html' }); } catch (e) {}
     var touch = matchMedia('(pointer:coarse)').matches;
@@ -421,7 +437,7 @@
       'Apasă pe orice text și scrie peste el. Tot ce schimbi se salvează singur, în acest browser.',
       'Când apeși pe un text, deasupra lui apare o bară mică. Duplică adaugă încă un bloc la fel chiar dedesubt. Șterge îl scoate din pagină. Săgeata ↑ selectează blocul mai mare din care face parte, până la secțiunea întreagă.',
       'Ca să adaugi ceva nou, duplică un bloc asemănător și schimbă-i textul.',
-      'Când ai terminat, apasă Exportă și trimite fișierul lui Mario. Site-ul public rămâne neschimbat până îl actualizează el.'
+      'Când ai terminat, apasă Salvează și exportă și trimite fișierul lui Mario. Site-ul public rămâne neschimbat până îl actualizează el.'
     ].forEach(function (t) { p.body.appendChild(el('p', '', t)); });
     p.actions.appendChild(button('Am înțeles', 'ed-btn ed-primary', function () { keep(HELP_KEY, 1); p.close(); }));
   }
@@ -439,6 +455,7 @@
     p.actions.appendChild(button('Continuă cu modificările mele', 'ed-btn ed-primary', function () {
       base = draft.base;
       startedAt = draft.startedAt || 0;
+      pendingSince = draft.pendingSince || draft.startedAt || draft.savedAt || Date.now();
       apply(draft.edited);
       p.close();
       refresh(true);
@@ -482,6 +499,14 @@
       '.ed-btn:hover{background:rgba(243,248,247,.12)}' +
       '.ed-primary{background:#22876a;border-color:#22876a;font-weight:600}' +
       '.ed-primary:hover{background:#1b6d58}' +
+      '.ed-save{display:inline-flex;align-items:center;justify-content:center;gap:8px}' +
+      '.ed-save svg{width:18px;height:18px;flex:none;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}' +
+      '.ed-glow{position:fixed;inset:0;z-index:64;pointer-events:none;opacity:0;transition:opacity .6s;box-shadow:inset 0 0 0 3px rgba(245,158,11,.85),inset 0 0 48px 12px rgba(245,158,11,.45)}' +
+      'html.ed-nag .ed-glow{opacity:1;animation:ed-breathe 3s ease-in-out infinite}' +
+      'html.ed-nag .ed-save{animation:ed-pulse 2s ease-in-out infinite}' +
+      '@keyframes ed-breathe{50%{opacity:.6}}' +
+      '@keyframes ed-pulse{0%,100%{box-shadow:0 0 0 0 rgba(245,158,11,.7)}50%{box-shadow:0 0 0 6px rgba(245,158,11,0)}}' +
+      '@media (prefers-reduced-motion:reduce){html.ed-nag .ed-glow,html.ed-nag .ed-save{animation:none}html.ed-nag .ed-save{box-shadow:0 0 0 3px rgba(245,158,11,.8)}}' +
       '.ed-toast{position:fixed;z-index:70;left:50%;bottom:84px;transform:translateX(-50%);display:flex;align-items:center;gap:12px;max-width:calc(100% - 24px);padding:10px 14px;background:#fff;color:#15333b;border:1px solid #d4e2dd;border-radius:8px;box-shadow:0 8px 24px rgba(21,51,59,.2)}' +
       '.ed-toast[hidden]{display:none}' +
       '.ed-link{border:0;background:none;padding:4px 2px;color:#1b6d58;font-weight:600;text-decoration:underline;text-underline-offset:3px;cursor:pointer}' +
@@ -516,8 +541,11 @@
     var reset = button('Renunță la tot', 'ed-btn', function () { confirmReset(reset); });
     reset.title = 'Șterge toate modificările și reîncarcă pagina publică';
     bar.appendChild(reset);
-    bar.appendChild(button('Exportă', 'ed-btn ed-primary', exportFile));
-    ui.warn = bar.appendChild(el('span', 'ed-warn', 'Browserul nu permite salvarea automată. Exportă înainte să închizi pagina.'));
+    ui.save = bar.appendChild(button('', 'ed-btn ed-primary ed-save', exportFile));
+    ui.save.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h11l5 5v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z"/><path d="M7 3v5h8V3"/><rect x="7" y="13" width="10" height="8"/></svg>' +
+      '<span>Salvează și exportă</span>' +
+      '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11"/><path d="M7 10l5 5 5-5"/><path d="M4 20h16"/></svg>';
+    ui.warn = bar.appendChild(el('span', 'ed-warn', 'Browserul nu permite salvarea automată. Salvează și exportă înainte să închizi pagina.'));
     ui.warn.hidden = true;
     ui.bar = bar;
 
@@ -535,6 +563,7 @@
     ui.toast.setAttribute('role', 'status');
     ui.toast.hidden = true;
 
+    document.body.appendChild(el('div', 'ed-glow'));
     document.body.appendChild(ctl);
     document.body.appendChild(ui.toast);
     document.body.appendChild(bar);
@@ -635,6 +664,7 @@
       if (draft.pageHash === pageHash) {
         base = draft.base;
         startedAt = draft.startedAt || 0;
+        pendingSince = draft.pendingSince || (draft.exportedAt >= draft.savedAt ? 0 : draft.startedAt || draft.savedAt || 0);
         apply(draft.edited);
       } else if (draft.exportedAt && draft.exportedAt >= draft.savedAt) {
         keep(KEY, null);
@@ -644,6 +674,7 @@
     }
     wire();
     refresh(false);
+    setInterval(nag, 15000);
     if (offer) offerDraft(draft);
     else if (!load(HELP_KEY)) showHelp();
   });

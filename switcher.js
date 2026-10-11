@@ -1,9 +1,11 @@
-/* Comutator intre variantele de design. Se scoate cand alegem varianta finala. */
+/* Comutator intre variantele de design. Varianta 2 e pagina principala, 1 si 3 stau in archive/ ca inspiratie.
+   Nu apare in modul de editare (?edit), ca sa nu intre in exportul clientului. */
 (function () {
+  if (document.documentElement.classList.contains('editing')) return;
   var VARIANTS = [
-    { n: 1, name: 'Briză', path: '' },
-    { n: 2, name: 'Editorial', path: 'varianta-2/' },
-    { n: 3, name: 'Senin', path: 'varianta-3/' }
+    { n: 1, name: 'Briză', path: 'archive/varianta-1/' },
+    { n: 2, name: 'Editorial', path: '' },
+    { n: 3, name: 'Senin', path: 'archive/varianta-3/' }
   ];
   var base = document.currentScript.src.replace(/switcher\.js.*$/, '');
   var cur = +document.documentElement.getAttribute('data-variant') || 1;
