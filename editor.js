@@ -8,7 +8,8 @@
 (function () {
   'use strict';
 
-  var KEY = 'dr-editor-draft-v1';
+  /* v2 din 12.10.2026: runda 1 de modificări e pe site, ciornele mai vechi (v1) nu se mai încarcă */
+  var KEY = 'dr-editor-draft-v2';
   var HELP_KEY = 'dr-editor-help-v1';
   var REGIONS = [
     ['brand', '.top .brand', 'Antet'],
