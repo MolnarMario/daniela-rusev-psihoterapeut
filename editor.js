@@ -8,8 +8,8 @@
 (function () {
   'use strict';
 
-  /* v2 din 12.10.2026: runda 1 de modificări e pe site, ciornele mai vechi (v1) nu se mai încarcă */
-  var KEY = 'dr-editor-draft-v2';
+  /* v3 din 12.10.2026 seara: runda 2 de modificări e pe site, ciornele mai vechi (v1, v2) nu se mai încarcă */
+  var KEY = 'dr-editor-draft-v3';
   var HELP_KEY = 'dr-editor-help-v1';
   var REGIONS = [
     ['brand', '.top .brand', 'Antet'],
@@ -27,6 +27,7 @@
     ['.also li', 'Temă'],
     ['.methods > div', 'Metodă'],
     ['.steps li', 'Pas'],
+    ['.myth-list li', 'Mit'],
     ['.facts > div', 'Rând'],
     ['.scores li', 'Notă'],
     ['.creds li', 'Rând'],

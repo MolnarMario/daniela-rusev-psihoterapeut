@@ -190,6 +190,18 @@ p{margin:0 0 1em;text-wrap:pretty}
   .methods .main dt .dt-arrow{display:inline-block;width:.8em;height:.8em;margin-left:.3em;vertical-align:-.05em;color:#c8eadb}
 }
 
+/* mituri */
+.myths{background:var(--ink);color:var(--paper);padding:52px 0}
+.myths h2{max-width:22ch}
+.myth-list{list-style:none;margin:36px 0 0;padding:0;display:grid;gap:32px}
+.myth-list li{display:grid;gap:10px;align-content:start}
+.myth{font-family:var(--serif);font-size:1.3rem;line-height:1.3;color:rgba(243,248,247,.55);text-decoration:line-through;text-decoration-color:var(--mint);text-decoration-thickness:2px}
+.truth{margin:0;color:rgba(243,248,247,.8);max-width:32em}
+.truth strong{color:var(--paper);font-weight:600}
+@media (min-width:900px){.myth-list{grid-template-columns:repeat(3,1fr);gap:40px}}
+@media (max-width:899px){.myths{padding:36px 0}.myth-list{margin-top:28px;gap:24px}}
+.myths .acc-btn{--acc-c:#c8eadb}
+
 /* steps */
 .steps{padding:52px 0 40px}
 .steps ol{list-style:none;margin:36px 0 0;padding:0;display:grid;gap:28px;counter-reset:s}
@@ -320,7 +332,7 @@ p{margin:0 0 1em;text-wrap:pretty}
 <script>
 document.documentElement.classList.add('js');
 /* ?edit în adresă pornește modul de editare pentru client (editor.js) */
-if(/[?&]edit\b/.test(location.search)){document.documentElement.classList.add('editing');document.head.appendChild(Object.assign(document.createElement('script'),{src:'editor.js?v=3'}));}
+if(/[?&]edit\b/.test(location.search)){document.documentElement.classList.add('editing');document.head.appendChild(Object.assign(document.createElement('script'),{src:'editor.js?v=4'}));}
 </script>
 </head>
 <body>
@@ -394,7 +406,7 @@ if(/[?&]edit\b/.test(location.search)){document.documentElement.classList.add('e
       <ul class="primary">
         <li><h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m16.24 7.76-2.12 6.36-6.36 2.12 2.12-6.36 6.36-2.12z"/></svg></span>Autocunoaștere</h3><p>De ce reacționezi așa cum o faci, ce îți ghidează alegerile inconștient și cum ajungi să trăiești cu mai multă bucurie și claritate.</p></li>
         <li><h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/><path d="M3.22 12H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27"/></svg></span>Anxietate și atacuri de panică</h3><p>Inima care o ia la goană fără motiv, gândurile care nu se opresc seara, locurile pe care începi să le eviți.</p></li>
-        <li><h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M12 7v5l4 2"/></svg></span>Traume</h3><p>Evenimente care au trecut, dar la care corpul încă reacționează ca și cum s-ar întâmpla acum.</p></li>
+        <li><h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M12 7v5l4 2"/></svg></span>Blocaje emoționale</h3><p>Evenimente care au trecut, dar la care corpul încă reacționează ca și cum s-ar întâmpla acum.</p></li>
         <li><h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 14.9A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.24"/><path d="M8 19v1"/><path d="M8 14v1"/><path d="M16 19v1"/><path d="M16 14v1"/><path d="M12 21v1"/><path d="M12 16v1"/></svg></span>Depresie</h3><p>Zile în care nimic nu mai are gust și orice decizie pare prea grea.</p></li>
         <li><h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/><path d="m12 13-1-1 2-2-3-3 2-2"/></svg></span>Doliu și despărțiri</h3><p>Pierderea unui om drag, sfârșitul unei relații, o schimbare pe care n-ai ales-o.</p></li>
         <li><h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z"/><path d="M8 10h8"/><path d="M8 18h8"/><path d="M8 22v-6a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v6"/><path d="M9 6V4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/></svg></span>Lucrul cu adolescenții</h3><p>Haosul emoțiilor specifice vârstei, gândurile că nu ești de ajuns, teama de eșec înaintea examenelor te împiedică să-ți accesezi propriul potențial.</p></li>
@@ -408,6 +420,7 @@ if(/[?&]edit\b/.test(location.search)){document.documentElement.classList.add('e
           <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg></span>Tulburări de somn</li>
           <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg></span>Relația cu mâncarea</li>
           <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></span>Tensiuni în familie</li>
+          <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 7h6v6"/><path d="m22 7-8.5 8.5-5-5L2 17"/></svg></span>Evoluție și performanță</li>
           <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>Armonizare și echilibru în cuplu</li>
         </ul>
       </div>
@@ -460,15 +473,17 @@ if(/[?&]edit\b/.test(location.search)){document.documentElement.classList.add('e
     </blockquote>
     <div class="story">
       <h2 class="sec-title" style="margin-bottom:20px">Despre mine</h2>
-      <p>Am terminat întâi Facultatea de Cibernetică. Drumul spre psihologie a început în 1995, din nevoia de a-mi îmbunătăți propria viață. Am mers la seminarii de dezvoltare personală, am făcut cursuri, apoi am devenit practicantă a lor. La maturitate am adăugat Facultatea de Psihologie și un master în psihologie.</p>
-      <p>Din cibernetică mi-a rămas obiceiul de a privi lucrurile ca pe un sistem. O problemă rar stă singură. Anxietatea are legătură cu somnul, cu relațiile, cu locul de muncă. Când se mișcă o piesă, se mișcă și restul.</p>
+      <p>Primii pași către înțelegerea acestei ființe minunate care este omul au început în 1995, din dorința de a-mi transforma propria viață. Experiențele au fost dintre cele mai împlinitoare și diverse. Drumul nu a fost ușor, el s-a transformat treptat într-o pasiune. Recompensele au venit firesc: calm, eliberare și sentimentul profund că în sfârșit am ajuns acasă, în mine și în viața mea.</p>
+      <p>Pentru că îmi plac lucrurile bine făcute și pentru că transformarea în bine a fost atât de puternică, am continuat să mă perfecționez și să mă dedic regăsirii și susținerii celor din jurul meu. Am devenit coach de dezvoltare personală, optimizări personale și performanță.</p>
+      <p>Facultatea de Psihologie a venit firesc, după o primă formare în Cibernetică. Privesc omul ca pe un tot integrat: când o piesă își găsește echilibrul, întreaga viață se schimbă în bine.</p>
       <p>Iubesc această profesie așa cum iubesc viața și oamenii.</p>
+      <p>Colegii și clienții îmi spun simplu, Dada.</p>
       <dl class="facts">
-        <div><dt>Drept de practică</dt><dd>Psihoterapeut practician autonom, Colegiul Psihologilor din România</dd></div>
+        <div><dt>Drept de practică</dt><dd>Psihoterapeut, psiholog consilier autonom, Colegiul Psihologilor din România</dd></div>
         <div><dt>Afiliere</dt><dd>Psihoterapeut recomandat de <a href="https://www.istt.ro/k_member/daniela-rusev/" rel="noopener">Institutul pentru Studiul și Tratamentul Traumei</a></dd></div>
-        <div><dt>Studii</dt><dd>Facultatea de Cibernetică, Facultatea de Psihologie, master în psihologie</dd></div>
+        <div><dt>Studii</dt><dd>Facultatea de Cibernetică, Facultatea de Psihologie, Master în psihologia familiei</dd></div>
         <div><dt>Atestate</dt><dd>Programare neuro-lingvistică (NLP), metoda de eliberare rapidă a emoțiilor (EFT)</dd></div>
-        <div><dt>Formare</dt><dd>Terapii colaborative orientate pe resurse și soluții, Metoda Călătoria</dd></div>
+        <div><dt>Formare</dt><dd>Terapii colaborative orientate pe resurse și soluții, Terapie contextual modulară, Metoda Călătoria</dd></div>
       </dl>
     </div>
   </div>
@@ -503,13 +518,24 @@ if(/[?&]edit\b/.test(location.search)){document.documentElement.classList.add('e
   </div>
 </section>
 
+<section class="myths" id="mituri" data-sec="Mituri">
+  <div class="wrap">
+    <h2 class="sec-title">Trei lucruri pe care oamenii le cred despre terapie</h2>
+    <ul class="myth-list">
+      <li><span class="myth">În câteva ședințe rezolv tot.</span><p class="truth"><strong>Lucrurile vechi cer timp.</strong> Unele se așază repede, altele au rădăcini adânci. Stabilim împreună spre ce mergem și ne uităm din când în când la drumul parcurs.</p></li>
+      <li><span class="myth">Psihologul îmi va spune ce să fac.</span><p class="truth"><strong>Tu cunoști viața ta mai bine decât oricine.</strong> Eu aduc întrebări și metode, deciziile rămân ale tale.</p></li>
+      <li><span class="myth">Va trebui să povestesc tot de la prima ședință.</span><p class="truth"><strong>Ritmul îl dai tu.</strong> Lucrez informat de traumă, ca psihoterapeut recomandat de ISTT.</p></li>
+    </ul>
+  </div>
+</section>
+
 <section class="faq" id="intrebari" data-sec="Întrebări">
   <div class="wrap">
     <h2 class="sec-title">Întrebări înainte de prima ședință</h2>
     <div>
       <details>
         <summary>Cum fac o programare?</summary>
-        <p>Sună la <a href="tel:+40743482900">0743 482 900</a> sau scrie-mi la <a href="mailto:dfocica@yahoo.com">dfocica@yahoo.com</a>. Stabilim împreună ziua și ora.</p>
+        <p>Sună la <a href="tel:+40743482900">0743 482 900</a>. Stabilim împreună ziua și ora.</p>
       </details>
       <details>
         <summary>Cât costă și cât durează o ședință?</summary>
@@ -538,7 +564,7 @@ if(/[?&]edit\b/.test(location.search)){document.documentElement.classList.add('e
       <a class="phone-big" href="tel:+40743482900">0743 482 900</a>
       <ul class="reach">
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 4.99-5.54 10.19-7.4 11.8a1 1 0 0 1-1.2 0C9.54 20.19 4 14.99 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg><address>Bulevardul Drumul Taberei nr. 29<br>Sector 6, București, 061416</address></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3.1V7a4 4 0 0 0 8 0V3.1"/><path d="m9 15-1-1"/><path d="m15 15 1-1"/><path d="M9 19c-2.8 0-5-2.2-5-5v-4a8 8 0 0 1 16 0v4c0 2.8-2.2 5-5 5Z"/><path d="m8 19-2 3"/><path d="m16 19 2 3"/></svg><span>Cabinetul e aproape de Favorit și de străzile Râul Dorna și Sibiu. Pe bulevard circulă metroul M5.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3.1V7a4 4 0 0 0 8 0V3.1"/><path d="m9 15-1-1"/><path d="m15 15 1-1"/><path d="M9 19c-2.8 0-5-2.2-5-5v-4a8 8 0 0 1 16 0v4c0 2.8-2.2 5-5 5Z"/><path d="m8 19-2 3"/><path d="m16 19 2 3"/></svg><span>Cabinetul e aproape de Favorit și de străzile Râul Dorna și Sibiu. Pe bulevard circulă metroul M5, ieșirea D.</span></li>
       </ul>
     </div>
     <div>
@@ -614,6 +640,6 @@ document.querySelectorAll('[data-yt]').forEach(function(b){
 });
 </script>
 <script src="switcher.js?v=5"></script>
-<script src="accordion.js?v=2" data-groups='[{"item":".primary li","head":"h3","body":"p"},{"item":".methods>div","head":"dt","body":"dd"},{"item":".steps li","head":"h3","body":"p"}]'></script>
+<script src="accordion.js?v=2" data-groups='[{"item":".primary li","head":"h3","body":"p"},{"item":".methods>div","head":"dt","body":"dd"},{"item":".steps li","head":"h3","body":"p"},{"item":".myth-list li","head":".myth","body":".truth"}]'></script>
 </body>
 </html>
