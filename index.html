@@ -177,7 +177,6 @@ p{margin:0 0 1em;text-wrap:pretty}
 .method .lead{font-family:var(--serif);font-size:clamp(1.35rem,1.1rem + 1vw,1.9rem);line-height:1.35;max-width:28em;margin:0 0 48px;font-variation-settings:"opsz" 48}
 .method .lead span{color:#c8eadb}
 .method .intro{color:rgba(243,248,247,.78);max-width:40em;margin:-24px 0 40px}
-.methods dt .dt-arrow{display:none}
 .methods{display:grid;gap:0;margin:0;border-top:1px solid rgba(243,248,247,.25)}
 .methods>div{padding:22px 0;border-bottom:1px solid rgba(243,248,247,.25)}
 .methods dt{font-family:var(--serif);font-size:1.25rem;line-height:1.25;margin-bottom:8px}
@@ -187,7 +186,6 @@ p{margin:0 0 1em;text-wrap:pretty}
   .methods{grid-template-columns:repeat(3,1fr);column-gap:40px}
   .methods .main{grid-column:1/-1;display:grid;grid-template-columns:4fr 7fr;gap:72px}
   .methods .main dd{font-size:1.125rem}
-  .methods .main dt .dt-arrow{display:inline-block;width:.8em;height:.8em;margin-left:.3em;vertical-align:-.05em;color:#c8eadb}
 }
 
 /* mituri */
@@ -332,7 +330,7 @@ p{margin:0 0 1em;text-wrap:pretty}
 <script>
 document.documentElement.classList.add('js');
 /* ?edit în adresă pornește modul de editare pentru client (editor.js) */
-if(/[?&]edit\b/.test(location.search)){document.documentElement.classList.add('editing');document.head.appendChild(Object.assign(document.createElement('script'),{src:'editor.js?v=4'}));}
+if(/[?&]edit\b/.test(location.search)){document.documentElement.classList.add('editing');document.head.appendChild(Object.assign(document.createElement('script'),{src:'editor.js?v=5'}));}
 </script>
 </head>
 <body>
@@ -431,14 +429,14 @@ if(/[?&]edit\b/.test(location.search)){document.documentElement.classList.add('e
 <section class="method" id="metode" data-sec="Metode">
   <div class="wrap">
     <p class="lead">Tu cunoști viața ta mai bine decât oricine. <span>Eu aduc metodele și întrebările potrivite.</span></p>
-    <p class="intro">Aplic online și în cabinet metode moderne din psihologie și dezvoltare personală, pentru a-ți oferi intervenții terapeutice eficiente și adaptate nevoilor tale. Iată doar câteva dintre ele:</p>
+    <p class="intro">Atât online cât și în cabinet aplic metode moderne din psihologie și dezvoltare personală, pentru a-ți oferi intervenții terapeutice eficiente și adaptate nevoilor tale. Iată doar câteva dintre ele:</p>
     <dl class="methods">
       <div class="main">
-        <dt>Metoda Călătoria<svg class="dt-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></dt>
+        <dt>Metoda Călătoria</dt>
         <dd>Metoda a fost creată de Brandon Bays și se practică în România din 2013. Într-o stare de relaxare profundă, te ghidez spre emoțiile pe care le-ai pus deoparte, uneori de foarte mult timp, și care încă îți influențează reacțiile de azi. Le privim, le dăm un nume și le lași să plece. <a href="https://www.metodacalatoria.ro" target="_blank" rel="noopener">Despre metodă, pe metodacalatoria.ro</a></dd>
       </div>
       <div>
-        <dt>Abordare informată de traumă</dt>
+        <dt>Abordare informată a traumei</dt>
         <dd>Sunt pe lista psihoterapeuților recomandați de Institutul pentru Studiul și Tratamentul Traumei. Ritmul îl dai tu și nu povestești nimic înainte să fii pregătit.</dd>
       </div>
       <div>
@@ -457,7 +455,7 @@ if(/[?&]edit\b/.test(location.search)){document.documentElement.classList.add('e
   <div class="wrap">
     <h2 class="sec-title">Ce se întâmplă după ce suni</h2>
     <ol>
-      <li><h3>Primul telefon</h3><p>Îmi spui pe scurt ce te aduce și găsim o oră care ți se potrivește.</p></li>
+      <li><h3>Primul telefon</h3><p>Este suficient să dai un telefon, găsim o dată care ți se potrivește și programăm.</p></li>
       <li><h3>Prima întâlnire</h3><p>Vorbim despre ce te frământă și despre ce ai vrea să fie altfel. Poți pune orice întrebare despre cum lucrez.</p></li>
       <li><h3>Un obiectiv clar</h3><p>Stabilim împreună spre ce lucrăm și cât de des ne vedem.</p></li>
       <li><h3>Verificăm pe drum</h3><p>Ne uităm periodic la ce s-a schimbat și hotărâm împreună care sunt pașii următori.</p></li>
@@ -479,11 +477,10 @@ if(/[?&]edit\b/.test(location.search)){document.documentElement.classList.add('e
       <p>Iubesc această profesie așa cum iubesc viața și oamenii.</p>
       <p>Colegii și clienții îmi spun simplu, Dada.</p>
       <dl class="facts">
-        <div><dt>Drept de practică</dt><dd>Psihoterapeut, psiholog consilier autonom, Colegiul Psihologilor din România</dd></div>
-        <div><dt>Afiliere</dt><dd>Psihoterapeut recomandat de <a href="https://www.istt.ro/k_member/daniela-rusev/" rel="noopener">Institutul pentru Studiul și Tratamentul Traumei</a></dd></div>
-        <div><dt>Studii</dt><dd>Facultatea de Cibernetică, Facultatea de Psihologie, Master în psihologia familiei</dd></div>
+        <div><dt>Drept de practică</dt><dd>Psihoterapeut autonom, consiliere psihologică, Colegiul Psihologilor din România</dd></div>
+        <div><dt>Studii</dt><dd>Facultatea de Cibernetică, Facultatea de Psihologie, Master în Psihologia Familiei</dd></div>
         <div><dt>Atestate</dt><dd>Programare neuro-lingvistică (NLP), metoda de eliberare rapidă a emoțiilor (EFT)</dd></div>
-        <div><dt>Formare</dt><dd>Terapii colaborative orientate pe resurse și soluții, Terapie contextual modulară, Metoda Călătoria</dd></div>
+        <div><dt>Formare</dt><dd>Terapii colaborative orientate pe resurse și soluții, Metoda Călătoria, Terapie contextual modulară</dd></div>
       </dl>
     </div>
   </div>
@@ -578,7 +575,7 @@ if(/[?&]edit\b/.test(location.search)){document.documentElement.classList.add('e
 <footer class="foot" data-hide-callbar>
   <div class="wrap">
     <p class="crisis">Dacă ești în pericol imediat, sună la 112. Telefonul Antisuicid al Alianței Române de Prevenție a Suicidului: <a href="tel:0800801200">0800 801 200</a> (vineri–duminică, 19:00–07:00; apel gratuit). Pentru sprijin telefonic non-stop: <a href="tel:0374456420">depreHUB, 0374 456 420</a>.</p>
-    <p>Daniela Rusev, psihoterapeut practician autonom. Bulevardul Drumul Taberei nr. 29, Sector 6, București.</p>
+    <p>Daniela Rusev, psihoterapeut autonom, consiliere psihologică. Bulevardul Drumul Taberei nr. 29, Sector 6, București.</p>
   </div>
 </footer>
 
