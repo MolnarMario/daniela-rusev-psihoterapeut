@@ -254,6 +254,16 @@ p{margin:0 0 1em;text-wrap:pretty}
 .rev-name{margin:0 0 12px;color:var(--poppy);font-weight:600;font-size:1.1rem}
 .rev-name::after{content:"\2605\2605\2605\2605\2605";display:block;margin-top:4px;color:#e7b23c;font-size:.85rem;letter-spacing:2px}
 .rev-text{margin:0 0 16px;color:var(--ink-soft);font-size:.98rem;line-height:1.6}
+.rev-text p{margin:0 0 .7em}
+.rev-text p:last-child{margin:0}
+/* recenziile lungi: 10 rânduri, apoi "Citește tot"; textul tăiat lasă loc butonului, ca toate cardurile să aibă aceeași înălțime */
+.js .rev-track{align-items:flex-start}
+.js .rev-text{min-height:16em;max-height:16em;overflow:hidden;position:relative;margin-bottom:12px}
+.js .rev-card.clamped .rev-text{min-height:calc(16em - 40px);max-height:calc(16em - 40px)}
+.js .rev-card.open .rev-text{max-height:none}
+.js .rev-card.clamped:not(.open) .rev-text::after{content:"";position:absolute;left:0;right:0;bottom:0;height:3.2em;background:linear-gradient(rgba(255,255,255,0),var(--surface))}
+.rev-more{height:40px;margin:0;padding:0 2px 12px;border:0;background:none;color:var(--poppy-dark);font:600 .9rem var(--sans);text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+.editing .rev-text{max-height:none!important;min-height:0!important}
 .rev-src{margin:auto 0 0;font-size:.85rem}
 .rev-src a{color:var(--ink-soft);text-underline-offset:3px}
 .rev-nav{display:flex;align-items:center;justify-content:center;gap:16px;margin-top:18px}
@@ -532,9 +542,9 @@ if(/[?&]edit\b/.test(location.search)){document.documentElement.classList.add('e
     </header>
     <div class="rev-carousel" aria-roledescription="carusel" aria-label="Recenzii de pe Google Maps">
       <ul class="rev-track">
-        <li class="rev-card"><p class="rev-name">Cristina A.</p><p class="rev-text">Am avut norocul să o întâlnesc pe Dada, într-un moment neplăcut al vieții mele, acum un an, iar sprijinul ei a fost esențial pentru procesul meu de vindecare. Este o profesionistă cu adevărat dedicată, mereu prezentă și atentă la nuanțele…</p><p class="rev-src"><a href="https://maps.google.com/?cid=15098717741690280769" target="_blank" rel="noopener">Recenzie Google</a></p></li>
+        <li class="rev-card"><p class="rev-name">Cristina A.</p><div class="rev-text"><p>Am avut norocul să o întâlnesc pe Dada, într-un moment neplăcut al vieții mele, acum un an, iar sprijinul ei a fost esențial pentru procesul meu de vindecare. Este o profesionistă cu adevărat dedicată, mereu prezentă și atentă la nuanțele emoțiilor și ale poveștilor pe care le aduc în cabinet. Se implică profund, fără a fi intruzivă, și reușește să creeze un spațiu sigur, în care sinceritatea, vulnerabilitatea și creșterea personală exista liber.</p><p>Nu am realizat cat de mult m-a ajutat sa ma dezvolt ca persoana, doar atunci când m-am uitat in urma cu 6 luni si am observat încet, încet, cum reacțiile mele si felul cum gândes au evoluat. Simt ca pe zi ce trece am devenit o versiune mai buna a mea. Are o răbdare si o memorie cu adevarat uluitoare si pentru asta am doar cuvinte de multumire! 🙏🏻</p><p>Empatia ei nu este doar o trăsătură, ci o formă de prezență autentică. M-am simțit înțeleasă și ghidată fără sa ma simt judecată. Știe când să fie caldă și când să ofere o perspectivă sinceră, chiar dacă uneori dificilă, dar întotdeauna cu intenția de a susține dezvoltarea mea personală.</p><p>Recomand cu toată încrederea sa apeleze la Dada, oricine caută un sprijin real, profund și uman. Este un aliat de nădejde în orice proces de transformare interioară. ❤️</p></div><p class="rev-src"><a href="https://maps.google.com/?cid=15098717741690280769" target="_blank" rel="noopener">Recenzie Google</a></p></li>
         <li class="rev-card"><p class="rev-name">Ovidiu L.</p><p class="rev-text">Inteligenta, empatica, umana si cu adevarat implicata, Dada m-a ajutat, cu eleganta si profesionalism, sa trec peste un moment extrem de dificil, dureros din viata mea! Ii voi fi recunoscator toata viata pentru tot ce a facut pentru mine! Recomand din tot sufletul!</p><p class="rev-src"><a href="https://maps.google.com/?cid=15098717741690280769" target="_blank" rel="noopener">Recenzie Google</a></p></li>
-        <li class="rev-card"><p class="rev-name">Teodora S.</p><p class="rev-text">Buna ziua, as dori sa ii multumesc dnei Dana pentru tot suportul acordat. Cu ajutorul Terapiei Calatoria eu am reusit in 6 luni: sa nu mai am atacuri de panica, mi-am vindecat claustrofobia, teama/ frica de a calatorii cu avionul…</p><p class="rev-src"><a href="https://maps.google.com/?cid=15098717741690280769" target="_blank" rel="noopener">Recenzie Google</a></p></li>
+        <li class="rev-card"><p class="rev-name">Teodora S.</p><div class="rev-text"><p>Buna ziua, as dori sa ii multumesc dnei Dana pentru tot suportul acordat. Cu ajutorul Terapiei Calatoria eu am reusit in 6 luni: sa nu mai am atacuri de panica, mi-am vindecat claustrofobia, teama/ frica de a calatorii cu avionul (eu fiind o persoana care are cel putin 3-4 zboruri pe luna), am constatat la 2-3 luni dupa finalizarea terapiei ca mi-am vindecat anumite problemele legate de digestie ex. constipatie, balonare, diminuarea refluxului gastric.</p><p>Ma simt mult mai usoara sufleteste si mai puternica mental ca niciodata. Dada iti multumesc si recomand cu drag Terapia Calatoria oricarei persoane aflate in blocaj sau cu probleme asemanatoare celor avute de mine.</p></div><p class="rev-src"><a href="https://maps.google.com/?cid=15098717741690280769" target="_blank" rel="noopener">Recenzie Google</a></p></li>
         <li class="rev-card"><p class="rev-name">Anca M.</p><p class="rev-text">Cel mai bun OM pe care il puteam intalni, in momentul potrivit! Implicare totala, profesionalism, empatie, o adevarata sursa de inspiratie, solutii si resurse. Cea careia ii datorez atat de multe si de la care stiu ca in continuare pot invata si mai multe! Recomand atat pentru terapie individuala, cat si de cuplu! THE best! ❤️</p><p class="rev-src"><a href="https://maps.google.com/?cid=15098717741690280769" target="_blank" rel="noopener">Recenzie Google</a></p></li>
         <li class="rev-card"><p class="rev-name">Elia G.</p><p class="rev-text">Un om de exceptie. Care a reușit sa ma scoata din bezna ce ma invaluia in urma unei casnicii lungi si esuate. Un om cu care am ramas in suflet pentru o viata. Ședințele cu Dana Rusev nu se uită niciodata. Mereu ma intorc cu gandul la cine am fost si cine am devenit datorita dansei. Multumesc. Ma-nclin.</p><p class="rev-src"><a href="https://maps.google.com/?cid=15098717741690280769" target="_blank" rel="noopener">Recenzie Google</a></p></li>
         <li class="rev-card"><p class="rev-name">Iolanda P.</p><p class="rev-text">Înainte de a menționa profesionalismul și experiența, în cabinetul doamnei doctor găsești Omul cald, empatic, cu o apropiere delicată și aplecare spre detaliile subtile ale minții și sufletului. Recomand cu toată încrederea!</p><p class="rev-src"><a href="https://maps.google.com/?cid=15098717741690280769" target="_blank" rel="noopener">Recenzie Google</a></p></li>
@@ -690,6 +700,20 @@ if(/[?&]edit\b/.test(location.search)){document.documentElement.classList.add('e
   }
   function mark(){var c=current();[].forEach.call(dotsBox.children,function(b,i){b.setAttribute('aria-current',i===c?'true':'false');});}
   function stop(){paused=true;clearInterval(timer);}
+  /* recenziile mai lungi de 10 rânduri primesc "Citește tot"; se recalculează la redimensionare */
+  function clampAll(){
+    cards.forEach(function(c){
+      if(c.classList.contains('open'))return;
+      var t=c.querySelector('.rev-text'),old=c.querySelector('.rev-more');
+      if(old)old.remove();
+      c.classList.remove('clamped');
+      if(!t||t.scrollHeight<=t.clientHeight+2)return;
+      c.classList.add('clamped');
+      var b=document.createElement('button');b.type='button';b.className='rev-more';b.textContent='Citește tot';b.setAttribute('aria-expanded','false');
+      b.addEventListener('click',function(){var o=c.classList.toggle('open');b.textContent=o?'Arată mai puțin':'Citește tot';b.setAttribute('aria-expanded',o?'true':'false');});
+      t.after(b);
+    });
+  }
   root.querySelector('.rev-prev').addEventListener('click',function(){stop();go(current()-1);});
   root.querySelector('.rev-next').addEventListener('click',function(){stop();go(current()+1);});
   dotsBox.addEventListener('click',stop);
@@ -699,9 +723,10 @@ if(/[?&]edit\b/.test(location.search)){document.documentElement.classList.add('e
   root.addEventListener('mouseleave',start);
   root.addEventListener('focusin',stop);
   var t;track.addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(mark,80);},{passive:true});
-  var w=innerWidth;addEventListener('resize',function(){if(innerWidth!==w){w=innerWidth;drawDots();}});
+  var w=innerWidth;addEventListener('resize',function(){if(innerWidth!==w){w=innerWidth;clampAll();drawDots();}});
   function start(){clearInterval(timer);if(paused||reduce)return;timer=setInterval(function(){if(!document.hidden)go(current()+1);},6000);}
-  drawDots();start();
+  clampAll();drawDots();start();
+  if(document.fonts)document.fonts.ready.then(clampAll);
 })();
 
 document.querySelectorAll('[data-yt]').forEach(function(b){
