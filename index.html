@@ -252,10 +252,15 @@ body::after{content:"";position:fixed;top:var(--sw-h,0px);left:0;right:0;bottom:
 @media (max-width:899px){
   .about-side>*{grid-area:1/1}
   .cabinet{position:relative}
-  .cabinet img{aspect-ratio:4/5;height:100%;object-fit:cover;object-position:64% 50%}
-  .cabinet::after{content:"";position:absolute;inset:0;background:linear-gradient(rgba(12,32,38,0) 30%,rgba(12,32,38,.78))}
-  .about-side .quote{z-index:1;align-self:end;padding:0 22px 22px;color:#fff;font-size:clamp(1.3rem,1.1rem + 1.2vw,1.6rem);text-shadow:0 1px 14px rgba(0,0,0,.35)}
-  .about-side .quote footer{color:rgba(255,255,255,.85)}
+  /* telefon: poza rămâne lată, un voal deschis din stânga, citatul pe partea deschisă */
+  .cabinet img{aspect-ratio:4/3;height:100%;object-fit:cover;object-position:78% 50%}
+  .cabinet::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(248,246,241,.97) 0%,rgba(248,246,241,.9) 42%,rgba(248,246,241,0) 76%)}
+  .about-side .quote{z-index:1;align-self:center;max-width:62%;padding:18px 0 18px 20px;font-size:clamp(1.02rem,.85rem + 1vw,1.4rem);line-height:1.3}
+  .about-side .quote footer{font-size:.82rem;margin-top:10px}
+}
+@media (min-width:600px) and (max-width:899px){
+  .cabinet img{aspect-ratio:16/9}
+  .about-side .quote{max-width:55%;padding-left:32px}
 }
 .story p{max-width:34em;margin-bottom:.7em}
 .facts{margin:20px 0 0;display:grid;gap:10px;font-size:.98rem}
