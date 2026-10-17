@@ -8,8 +8,8 @@
 (function () {
   'use strict';
 
-  /* v5 din 14.10.2026: documentul ei de pe 12.10, fundal verde deschis și caruselul de recenzii sunt pe site, ciornele mai vechi (v1-v4) nu se mai încarcă */
-  var KEY = 'dr-editor-draft-v5';
+  /* v6 din 17.10.2026: documentul ei de pe 17.10 (hero nou, poza cabinetului, chenar bej) e pe site, ciornele mai vechi (v1-v5) nu se mai încarcă */
+  var KEY = 'dr-editor-draft-v6';
   var HELP_KEY = 'dr-editor-help-v1';
   var REGIONS = [
     ['brand', '.top .brand', 'Antet'],
