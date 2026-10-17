@@ -168,6 +168,7 @@ body::after{content:"";position:fixed;top:var(--sw-h,0px);left:0;right:0;bottom:
   .hero{padding:48px 0 48px}
   .hero .wrap{grid-template-columns:minmax(0,7fr) minmax(0,4fr);align-items:center;gap:56px}
   .portrait{width:100%;margin:0 12px 0 0}
+  .actions{flex-direction:row;align-items:center;gap:28px}
 }
 
 /* concerns */
@@ -251,15 +252,15 @@ body::after{content:"";position:fixed;top:var(--sw-h,0px);left:0;right:0;bottom:
 @media (max-width:899px){
   .about-side>*{grid-area:1/1}
   .cabinet{position:relative}
-  /* telefon: poza rămâne lată, un voal deschis din stânga, citatul pe partea deschisă */
-  .cabinet img{aspect-ratio:7/5;height:100%;object-fit:cover;object-position:60% 50%}
+  /* telefon: poza pătrată, citatul stă pe peretele și raftul din stânga, sub un voal deschis */
+  .cabinet img{aspect-ratio:1/1;height:100%;object-fit:cover;object-position:35% 50%}
   /* voalul acoperă doar colțul de sus din stânga, unde stă citatul, și lasă canapeaua la vedere */
-  .cabinet::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(248,246,241,.96) 0%,rgba(248,246,241,.86) 45%,rgba(248,246,241,0) 72%);-webkit-mask-image:linear-gradient(rgba(0,0,0,1) 50%,rgba(0,0,0,0) 88%);mask-image:linear-gradient(rgba(0,0,0,1) 50%,rgba(0,0,0,0) 88%)}
+  .cabinet::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(248,246,241,.96) 0%,rgba(248,246,241,.88) 52%,rgba(248,246,241,0) 78%);-webkit-mask-image:linear-gradient(rgba(0,0,0,1) 50%,rgba(0,0,0,0) 88%);mask-image:linear-gradient(rgba(0,0,0,1) 50%,rgba(0,0,0,0) 88%)}
   .about-side .quote{z-index:1;align-self:start;max-width:66%;padding:20px 0 0 20px;font-size:clamp(1.18rem,1rem + 1.1vw,1.55rem);line-height:1.28}
   .about-side .quote footer{font-size:.82rem;margin-top:10px}
 }
 @media (min-width:600px) and (max-width:899px){
-  .cabinet img{aspect-ratio:16/9}
+  .cabinet img{aspect-ratio:4/3}
   .about-side .quote{max-width:55%;padding-left:32px}
 }
 .story p{max-width:34em;margin-bottom:.7em}
@@ -324,10 +325,16 @@ html:not(.js) .rev-nav,.editing .rev-nav{display:none}
 .media{padding:40px 0}
 .media .wrap{display:grid;gap:32px}
 .video{position:relative;display:block;width:100%;aspect-ratio:16/9;background:#000;border:0;padding:0;cursor:pointer;overflow:hidden}
-.video img{width:100%;height:100%;object-fit:cover;opacity:.85;transition:opacity .2s}
-.video:hover img{opacity:1}
-.video .play{position:absolute;left:20px;bottom:20px;display:flex;align-items:center;gap:10px;background:var(--paper);color:var(--ink);padding:10px 18px 10px 14px;border-radius:4px;font:600 .95rem var(--sans)}
-.video .play svg{width:20px;height:20px;color:var(--poppy)}
+.video img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+button.video::after{content:"";position:absolute;inset:0;background:rgba(21,51,59,.16);transition:background .2s}
+button.video:hover::after{background:rgba(21,51,59,0)}
+button.video:hover img{transform:scale(1.03)}
+/* butonul rotund din mijloc arată că poza pornește clipul; stă pe colier, nu pe față */
+.video .play-btn{position:absolute;left:50%;top:50%;z-index:1;display:grid;place-items:center;width:76px;height:76px;margin:-38px 0 0 -38px;border-radius:50%;background:var(--poppy);color:#fff;box-shadow:0 0 0 8px rgba(255,255,255,.4),0 12px 30px rgba(0,0,0,.35);transition:transform .2s,background .2s}
+.video .play-btn svg{width:32px;height:32px;margin-left:4px}
+button.video:hover .play-btn{transform:scale(1.08);background:var(--poppy-dark)}
+.video .play{position:absolute;left:14px;top:14px;z-index:1;background:var(--paper);color:var(--ink);padding:6px 12px;border-radius:4px;font:600 .85rem var(--sans)}
+@media (max-width:599px){.video .play-btn{width:60px;height:60px;margin:-30px 0 0 -30px;box-shadow:0 0 0 6px rgba(255,255,255,.4),0 8px 20px rgba(0,0,0,.35)}.video .play-btn svg{width:26px;height:26px;margin-left:3px}}
 .video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 .media-text p{color:var(--ink-soft)}
 @media (min-width:900px){.media .wrap{grid-template-columns:7fr 4fr;gap:56px;align-items:center}}
@@ -470,7 +477,7 @@ if(/[?&]edit\b/.test(location.search)){document.documentElement.classList.add('e
         <source type="image/webp" srcset="img/daniela-480.webp 480w, img/daniela-900.webp 900w" sizes="(min-width: 900px) 380px, 104px">
         <img src="img/daniela-480.jpg" srcset="img/daniela-480.jpg 480w, img/daniela-900.jpg 900w" sizes="(min-width: 900px) 380px, 104px" width="480" height="670" alt="Daniela Rusev, zâmbind, în sacou bleumarin" fetchpriority="high">
       </picture>
-      <figcaption>Daniela Rusev</figcaption>
+      <figcaption>Daniela Rusev (Dada)</figcaption>
     </figure>
   </div>
 </section>
@@ -554,7 +561,7 @@ if(/[?&]edit\b/.test(location.search)){document.documentElement.classList.add('e
         <footer>Daniela Rusev</footer>
       </blockquote>
       <figure class="cabinet">
-        <img src="img/cabinet-1000.jpg" srcset="img/cabinet-600.jpg 600w, img/cabinet-1000.jpg 1000w" sizes="(min-width: 900px) 460px, 100vw" width="1000" height="542" loading="lazy" alt="Cabinetul din Drumul Taberei: canapea și fotoliu, rafturi cu cărți și o fereastră spre copaci">
+        <img src="img/cabinet-1000.jpg" srcset="img/cabinet-600.jpg 600w, img/cabinet-1000.jpg 1000w" sizes="(min-width: 900px) 460px, 100vw" width="1000" height="707" loading="lazy" alt="Cabinetul din Drumul Taberei: canapea albă cu perne, fotoliu, rafturi cu cărți de o parte și de alta a ferestrei spre copaci">
       </figure>
     </div>
     <div class="story">
@@ -644,8 +651,9 @@ if(/[?&]edit\b/.test(location.search)){document.documentElement.classList.add('e
 <section class="media" id="media" data-sec="Media" aria-labelledby="media-title">
   <div class="wrap">
     <button class="video" type="button" data-yt="FqFHUbMxMdk" aria-label="Pornește interviul de la Speranța TV">
-      <img src="https://i.ytimg.com/vi/FqFHUbMxMdk/hqdefault.jpg" alt="" loading="lazy" width="480" height="360">
-      <span class="play"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Interviu, Speranța TV</span>
+      <img src="img/video-cover.jpg" alt="" loading="lazy" width="600" height="338">
+      <span class="play-btn" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+      <span class="play">Interviu, Speranța TV</span>
     </button>
     <div class="media-text">
       <h2 id="media-title" class="sec-title" style="margin-bottom:16px">La televizor, despre stres și familie</h2>
