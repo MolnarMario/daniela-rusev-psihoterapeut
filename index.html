@@ -126,7 +126,7 @@ body::after{content:"";position:fixed;top:var(--sw-h,0px);left:0;right:0;bottom:
 .hero h1{font-size:clamp(1.6rem,1.2rem + 1.5vw,2.2rem);max-width:26ch}
 .hero h1 em{font-style:italic;color:var(--plum);font-weight:400}
 .hero-lede{font-size:1.125rem;color:var(--ink-soft);max-width:36em;margin:22px 0 24px}
-.actions{display:flex;flex-wrap:wrap;align-items:center;gap:14px 24px}
+.actions{display:flex;flex-direction:column;align-items:flex-start;gap:18px}
 .btn{display:inline-flex;align-items:center;gap:10px;background:var(--poppy);color:#fff;text-decoration:none;font-weight:600;padding:14px 24px;border-radius:6px;transition:background .15s}
 .btn:hover{background:var(--poppy-dark)}
 .btn svg{width:18px;height:18px}
@@ -159,7 +159,7 @@ body::after{content:"";position:fixed;top:var(--sw-h,0px);left:0;right:0;bottom:
   .hero h1,.hero-lede,.actions,.creds-box{grid-column:1/-1}
   .hero h1{margin-top:28px;max-width:none}
   .hero-lede{font-size:1.06rem;margin:18px 0 22px}
-  .actions .btn{flex:1 1 100%;justify-content:center;min-height:52px}
+  .actions .btn{align-self:stretch;justify-content:center;min-height:52px}
   .link-arrow{display:inline-flex;align-items:center;min-height:44px}
   .creds-box{margin-bottom:24px}
   .creds{display:grid;gap:8px}
